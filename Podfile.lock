@@ -1,0 +1,10 @@
+PODS:
+  - ASIHTTPRequest (1.8.1):
+    - Reachability
+  - JSONKit (1.5pre)
+  - Reachability (3.0.0)
+
+DEPENDENCIES:
+  - ASIHTTPRequest
+  - JSONKit (~> 1.4)
+  - Reachability (~> 3.0.0)
