@@ -8,7 +8,7 @@
         <scene sceneID="5">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
-                <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="2" customClass="SignInViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -47,11 +47,27 @@
                     <connections>
                         <outlet property="password" destination="KWt-Sz-vqa" id="M7Z-1r-zUT"/>
                         <outlet property="username" destination="hmT-Hr-soK" id="Hhg-9s-ewz"/>
-                        <segue destination="nuo-jb-mN4" kind="modal" identifier="signinsegue" id="oCC-px-Okh"/>
+                        <segue destination="mT2-uz-137" kind="modal" identifier="signinsegue" id="0vT-VZ-hN0"/>
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="-1190" y="135"/>
+            <point key="canvasLocation" x="-1144" y="136"/>
+        </scene>
+        <scene sceneID="g8k-f9-VEl">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n9V-ct-C5v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController definesPresentationContext="YES" id="7HW-Fy-CSa" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="提问" image="187-pencil.png" id="Mrm-7B-y6I"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Fn7-jD-cIN">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="q4R-w5-PmL" kind="relationship" relationship="rootViewController" id="zLM-8C-ltP"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="-187" y="794"/>
         </scene>
         <scene sceneID="eRK-dz-nQD">
             <objects>
@@ -62,11 +78,27 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="提问" image="187-pencil.png" id="Mrm-7B-y6I"/>
+                    <navigationItem key="navigationItem" title="提问" id="uhs-in-QKK"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="-282" y="771"/>
+            <point key="canvasLocation" x="282" y="794"/>
+        </scene>
+        <scene sceneID="cpD-6U-jBS">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S6E-2J-QZa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController definesPresentationContext="YES" id="nxO-y6-UTr" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="搜索" image="06-magnify.png" id="vnb-fm-xPl"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="bnf-MO-teT">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="jjl-Gd-Adm" kind="relationship" relationship="rootViewController" id="rBM-ET-4Z1"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="-187" y="129"/>
         </scene>
         <scene sceneID="YTV-0N-aRz">
             <objects>
@@ -77,10 +109,26 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="搜索" image="06-magnify.png" id="vnb-fm-xPl"/>
+                    <navigationItem key="navigationItem" title="搜索" id="KLo-zY-cY2"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="252" y="416"/>
+            <point key="canvasLocation" x="282" y="136"/>
+        </scene>
+        <scene sceneID="dll-vo-EEA">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2qm-sq-yGC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController definesPresentationContext="YES" id="XSb-NZ-sWE" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="我" image="111-user.png" id="C1e-xq-Ctp"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="aRd-MT-sEY">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vAB-Kg-1dm" kind="relationship" relationship="rootViewController" id="aq3-Dg-ZaG"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="-187" y="1415"/>
         </scene>
         <scene sceneID="M9t-rI-Wi4">
             <objects>
@@ -89,13 +137,20 @@
                     <view key="view" contentMode="scaleToFill" id="Eo4-s7-3Ah">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" id="6g0-OJ-MWd">
+                                <rect key="frame" x="1" y="-48" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="我" image="111-user.png" id="C1e-xq-Ctp"/>
+                    <navigationItem key="navigationItem" id="M8M-KS-Rie"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="671" y="416"/>
+            <point key="canvasLocation" x="282" y="1415"/>
         </scene>
         <scene sceneID="rko-JS-28d">
             <objects>
@@ -106,10 +161,26 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="频道" image="70-tv.png" id="5E3-d2-3cu"/>
+                    <navigationItem key="navigationItem" title="频道" id="GfB-Tk-Nvn"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="671" y="-135"/>
+            <point key="canvasLocation" x="277" y="-507"/>
+        </scene>
+        <scene sceneID="oxB-p3-LIX">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zUR-Cq-kd0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController definesPresentationContext="YES" id="d2n-ME-BP1" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="频道" image="70-tv.png" id="Iz6-CI-QOM"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="EKK-0M-gq6">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="z6W-Lc-bbN" kind="relationship" relationship="rootViewController" id="0Ly-DY-bmg"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="-187" y="-507"/>
         </scene>
         <scene sceneID="XOe-Us-mMI">
             <objects>
@@ -123,12 +194,12 @@
                     <navigationItem key="navigationItem" id="eV0-Nm-OmB"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="252" y="-746"/>
+            <point key="canvasLocation" x="728" y="-1195"/>
         </scene>
         <scene sceneID="SYv-ei-OgB">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cYo-x5-YVf" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tableViewController id="FYz-zh-hm6" sceneMemberID="viewController">
+                <tableViewController id="FYz-zh-hm6" customClass="ActivityTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="hB8-aZ-B2J">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -152,11 +223,11 @@
                             <outlet property="delegate" destination="FYz-zh-hm6" id="QeV-vf-HbO"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="动态" image="77-ekg.png" id="2k3-y1-X2M"/>
+                    <navigationItem key="navigationItem" title="动态" id="1Qf-SS-coS"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="252" y="-135"/>
+            <point key="canvasLocation" x="282" y="-1195"/>
         </scene>
         <scene sceneID="St8-dI-O6C">
             <objects>
@@ -170,29 +241,31 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="FYz-zh-hm6" kind="relationship" relationship="viewControllers" id="xVA-q5-mnf"/>
-                        <segue destination="z6W-Lc-bbN" kind="relationship" relationship="viewControllers" id="TVH-rj-dZC"/>
-                        <segue destination="q4R-w5-PmL" kind="relationship" relationship="viewControllers" id="D7W-Gf-RpN"/>
-                        <segue destination="jjl-Gd-Adm" kind="relationship" relationship="viewControllers" id="3Px-Yt-4PX"/>
-                        <segue destination="vAB-Kg-1dm" kind="relationship" relationship="viewControllers" id="YXY-z1-xQv"/>
+                        <segue destination="nuo-jb-mN4" kind="relationship" relationship="viewControllers" id="aNf-GF-Z3V"/>
+                        <segue destination="d2n-ME-BP1" kind="relationship" relationship="viewControllers" id="W2H-vE-6N6"/>
+                        <segue destination="nxO-y6-UTr" kind="relationship" relationship="viewControllers" id="A2R-iK-3xC"/>
+                        <segue destination="7HW-Fy-CSa" kind="relationship" relationship="viewControllers" id="SCJ-gk-yuJ"/>
+                        <segue destination="XSb-NZ-sWE" kind="relationship" relationship="viewControllers" id="GvU-yq-man"/>
                     </connections>
                 </tabBarController>
             </objects>
-            <point key="canvasLocation" x="-282" y="134"/>
+            <point key="canvasLocation" x="-712" y="136"/>
         </scene>
         <scene sceneID="vhE-sb-lNL">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e0H-cJ-3OJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController definesPresentationContext="YES" id="nuo-jb-mN4" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="动态" image="77-ekg.png" id="R7D-8o-CST"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="HcJ-r1-Rdg">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="mT2-uz-137" kind="relationship" relationship="rootViewController" id="Rq0-Ck-eaa"/>
+                        <segue destination="FYz-zh-hm6" kind="relationship" relationship="rootViewController" id="2fq-qy-jtg"/>
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="-738" y="134"/>
+            <point key="canvasLocation" x="-187" y="-1195"/>
         </scene>
     </scenes>
     <resources>
@@ -203,8 +276,11 @@
         <image name="77-ekg.png" width="26" height="22"/>
     </resources>
     <classes>
-        <class className="ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+        <class className="ActivityTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ActivityTableViewController.h"/>
+        </class>
+        <class className="SignInViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SignInViewController.h"/>
             <relationships>
                 <relationship kind="action" name="signInButtonPressed:"/>
                 <relationship kind="outlet" name="password" candidateClass="UITextField"/>

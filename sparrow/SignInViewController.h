@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  SignInViewController.h
 //  sparrow
 //
 //  Created by mac on 12-5-25.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface SignInViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet UITextField *username;
 @property (strong, nonatomic) IBOutlet UITextField *password;

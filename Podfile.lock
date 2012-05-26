@@ -3,8 +3,10 @@ PODS:
     - Reachability
   - JSONKit (1.5pre)
   - Reachability (3.0.0)
+  - SDWebImage (2.6)
 
 DEPENDENCIES:
   - ASIHTTPRequest
   - JSONKit (~> 1.4)
   - Reachability (~> 3.0.0)
+  - SDWebImage

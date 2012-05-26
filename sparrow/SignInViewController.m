@@ -1,15 +1,17 @@
 //
-//  ViewController.m
+//  SignInViewController.m
 //  sparrow
 //
 //  Created by mac on 12-5-25.
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "SignInViewController.h"
 #import "ASIFormDataRequest.h"
+#import "JSONKit.h"
+#import "Constant.h"
 
-@implementation ViewController
+@implementation SignInViewController
 @synthesize username;
 @synthesize password;
 
@@ -65,6 +67,7 @@
 - (IBAction)signInButtonPressed:(id)sender {
     //    NSString *const PREFIX = @"http://0.0.0.0:3000/";
     //    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@users/sign_in.json", PREFIX]];
+    NSLog(PREFIX_URL);
     NSURL *url = [NSURL URLWithString:@"http://0.0.0.0:3000/users/sign_in.json"];
     NSString *username = self.username.text;
     NSString *password = self.password.text;
@@ -75,7 +78,10 @@
     NSError *error = [request error];
     if (!error) {
         NSString *response = [request responseString];
-        NSLog(response);
+        NSDictionary *user_info = [response objectFromJSONString];
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setValuesForKeysWithDictionary:user_info];
+        
         if (response) {
             [self performSegueWithIdentifier:@"signinsegue" sender:self];
         }

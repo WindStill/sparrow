@@ -42,11 +42,12 @@
 		04C2061D156F302400B31E3F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C2061C156F302400B31E3F /* main.m */; };
 		04C20621156F302400B31E3F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C20620156F302400B31E3F /* AppDelegate.m */; };
 		04C20624156F302400B31E3F /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04C20622156F302400B31E3F /* MainStoryboard.storyboard */; };
-		04C20627156F302400B31E3F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C20626156F302400B31E3F /* ViewController.m */; };
+		04C20627156F302400B31E3F /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C20626156F302400B31E3F /* SignInViewController.m */; };
 		04C20639156F334F00B31E3F /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04C20638156F334F00B31E3F /* MobileCoreServices.framework */; };
 		04C2063C156F335800B31E3F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04C2063B156F335800B31E3F /* SystemConfiguration.framework */; };
 		04C2063E156F335F00B31E3F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04C2063D156F335F00B31E3F /* CFNetwork.framework */; };
 		04C20640156F337200B31E3F /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 04C2063F156F337200B31E3F /* libz.1.2.5.dylib */; };
+		04D5D6651570D02300935C59 /* ActivityTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D5D6641570D02300935C59 /* ActivityTableViewController.m */; };
 		8130E9F7AE514DFBB2AE7143 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8FAB3535DA4D26928B43D5 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -90,12 +91,15 @@
 		04C2061F156F302400B31E3F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		04C20620156F302400B31E3F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		04C20623156F302400B31E3F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		04C20625156F302400B31E3F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		04C20626156F302400B31E3F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		04C20625156F302400B31E3F /* SignInViewController.h */ = {isa = PBXFileReference; path = SignInViewController.h; sourceTree = "<group>"; };
+		04C20626156F302400B31E3F /* SignInViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
 		04C20638156F334F00B31E3F /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		04C2063B156F335800B31E3F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		04C2063D156F335F00B31E3F /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		04C2063F156F337200B31E3F /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
+		04D5D6631570D02300935C59 /* ActivityTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityTableViewController.h; sourceTree = "<group>"; };
+		04D5D6641570D02300935C59 /* ActivityTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityTableViewController.m; sourceTree = "<group>"; };
+		04D5D6671570D0BD00935C59 /* Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
 		170FFE6909894292A7C01327 /* Pods.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		BD8FAB3535DA4D26928B43D5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -194,8 +198,11 @@
 				04C2061F156F302400B31E3F /* AppDelegate.h */,
 				04C20620156F302400B31E3F /* AppDelegate.m */,
 				04C20622156F302400B31E3F /* MainStoryboard.storyboard */,
-				04C20625156F302400B31E3F /* ViewController.h */,
-				04C20626156F302400B31E3F /* ViewController.m */,
+				04C20625156F302400B31E3F /* SignInViewController.h */,
+				04C20626156F302400B31E3F /* SignInViewController.m */,
+				04D5D6631570D02300935C59 /* ActivityTableViewController.h */,
+				04D5D6641570D02300935C59 /* ActivityTableViewController.m */,
+				04D5D6671570D0BD00935C59 /* Constant.h */,
 				04C20617156F302400B31E3F /* Supporting Files */,
 			);
 			path = sparrow;
@@ -322,7 +329,8 @@
 			files = (
 				04C2061D156F302400B31E3F /* main.m in Sources */,
 				04C20621156F302400B31E3F /* AppDelegate.m in Sources */,
-				04C20627156F302400B31E3F /* ViewController.m in Sources */,
+				04C20627156F302400B31E3F /* SignInViewController.m in Sources */,
+				04D5D6651570D02300935C59 /* ActivityTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
