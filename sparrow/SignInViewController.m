@@ -65,10 +65,7 @@
 }
 
 - (IBAction)signInButtonPressed:(id)sender {
-    //    NSString *const PREFIX = @"http://0.0.0.0:3000/";
-    //    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@users/sign_in.json", PREFIX]];
-    NSLog(PREFIX_URL);
-    NSURL *url = [NSURL URLWithString:@"http://0.0.0.0:3000/users/sign_in.json"];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/users/sign_in.json",PREFIX_URL]];
     NSString *username = self.username.text;
     NSString *password = self.password.text;
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
@@ -76,6 +73,7 @@
     [request setPostValue:password forKey:@"user[password]"];
     [request startSynchronous];
     NSError *error = [request error];
+    
     if (!error) {
         NSString *response = [request responseString];
         NSDictionary *user_info = [response objectFromJSONString];
@@ -83,6 +81,7 @@
         [defaults setValuesForKeysWithDictionary:user_info];
         
         if (response) {
+            
             [self performSegueWithIdentifier:@"signinsegue" sender:self];
         }
         

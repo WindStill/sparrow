@@ -39,13 +39,13 @@
 {
     [super viewDidLoad];
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/activities", PREFIX_URL]];
-    NSLog([url path]);
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
 //    [request setRequestMethod:@"GET"];
     [request startSynchronous];
     NSError *error = [request error];
     if (!error) {
         NSString *response = [request responseString];
+        NSLog(response);
         self.listData = [response mutableObjectFromJSONString];
         NSLog(@"row: %lu", (unsigned long)[listData count]);
     }
@@ -109,12 +109,12 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"activity_cell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
-    }
+//    if (cell == nil) {
+//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+//    }
     
     NSUInteger row = [indexPath row];
     NSDictionary *activity = [listData objectAtIndex:row];
@@ -137,17 +137,25 @@
         avatar_url = [[[activity objectForKey:@"answer"] objectForKey:@"user"] objectForKey:@"avatar_url"];
     }
     
-    cell.textLabel.text = title;
-    cell.textLabel.font = [UIFont boldSystemFontOfSize:10];
-    cell.detailTextLabel.text = name;
+    UIImageView *imageView = [cell viewWithTag:0];
+    [imageView  setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", PREFIX_URL, avatar_url]]
+               placeholderImage:[UIImage imageNamed:@"111-user.png"]];
+    UILabel *titleLabel = [cell viewWithTag:0];
+    titleLabel.text = title;
     
-    [cell.imageView setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", PREFIX_URL, avatar_url]]
-                   placeholderImage:[UIImage imageNamed:@"111-user.png"]];
+//    cell.textLabel.text = title;
+//    cell.textLabel.font = [UIFont boldSystemFontOfSize:14];
+//    cell.detailTextLabel.text = name;
+//    
+//    [cell.imageView setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", PREFIX_URL, avatar_url]]
+//                   placeholderImage:[UIImage imageNamed:@"111-user.png"]];
     
-    CGRect frame = cell.imageView.frame;
-    frame.size.height = 5;
-    frame.size.width = 5;
-    cell.imageView.frame = frame;
+//    cell.imageView.frame = CGRectMake(0, 0, 10, 10);
+//    CGRect frame = cell.imageView.frame;
+//
+//    frame.size.height = 5;
+//    frame.size.width = 5;
+//    cell.imageView.frame = frame;
     // Configure the cell...
     
     return cell;
