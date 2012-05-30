@@ -45,7 +45,6 @@
     NSError *error = [request error];
     if (!error) {
         NSString *response = [request responseString];
-        NSLog(response);
         self.listData = [response mutableObjectFromJSONString];
         NSLog(@"row: %lu", (unsigned long)[listData count]);
     }
@@ -122,7 +121,7 @@
     NSString *type = [activity objectForKey:@"activity_type"];
     NSString *title = nil;
     NSString *avatar_url = nil;
-    NSString *name = @"李园";
+    NSString *action = nil;
     if ([type isEqualToString:@"vote_up_answer"]) {
         title = [[activity objectForKey:@"question"] objectForKey:@"title"];
         avatar_url = [[activity objectForKey:@"voter"] objectForKey:@"avatar_url"];
@@ -137,10 +136,11 @@
         avatar_url = [[[activity objectForKey:@"answer"] objectForKey:@"user"] objectForKey:@"avatar_url"];
     }
     
-    UIImageView *imageView = [cell viewWithTag:0];
-    [imageView  setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", PREFIX_URL, avatar_url]]
-               placeholderImage:[UIImage imageNamed:@"111-user.png"]];
-    UILabel *titleLabel = [cell viewWithTag:0];
+    UIImageView * imageView = (UIImageView *)[cell viewWithTag:1];
+    
+    [imageView setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", PREFIX_URL, avatar_url]]
+                    placeholderImage:[UIImage imageNamed:@"111-user.png"]];  
+    UILabel *titleLabel = (UILabel *)[cell viewWithTag:2];
     titleLabel.text = title;
     
 //    cell.textLabel.text = title;
