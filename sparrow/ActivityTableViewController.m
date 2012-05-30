@@ -124,16 +124,22 @@
     NSString *action = nil;
     if ([type isEqualToString:@"vote_up_answer"]) {
         title = [[activity objectForKey:@"question"] objectForKey:@"title"];
-        avatar_url = [[activity objectForKey:@"voter"] objectForKey:@"avatar_url"];
+        NSDictionary *voter = [activity objectForKey:@"voter"];
+        avatar_url = [voter objectForKey:@"avatar_url"];
+        action = [NSString stringWithFormat:@"%@ 赞同了该回答", [voter objectForKey:@"name"]];
     }else if ([type isEqualToString:@"subscribe_post"]) {
         title = [[activity objectForKey:@"question"] objectForKey:@"title"];
-        avatar_url = [[activity objectForKey:@"subscriber"] objectForKey:@"avatar_url"];
+        NSDictionary *subscriber = [activity objectForKey:@"subscriber"];
+        avatar_url = [subscriber objectForKey:@"avatar_url"];
+        action = [NSString stringWithFormat:@"%@ 关注了该问题", [subscriber objectForKey:@"name"]];
     }else if ([type isEqualToString:@"ask"]) {
         title = [[activity objectForKey:@"question"] objectForKey:@"title"];
         avatar_url = [[[activity objectForKey:@"question"] objectForKey:@"user"] objectForKey:@"avatar_url"];
+        action = [NSString stringWithFormat:@"%@ 创建了该问题", [[[activity objectForKey:@"question"] objectForKey:@"user"] objectForKey:@"name"]];
     }else if ([type isEqualToString:@"answer"]) {
         title = [[activity objectForKey:@"question"] objectForKey:@"title"];
         avatar_url = [[[activity objectForKey:@"answer"] objectForKey:@"user"] objectForKey:@"avatar_url"];
+        action = [NSString stringWithFormat:@"%@ 回答了该问题", [[[activity objectForKey:@"answer"] objectForKey:@"user"] objectForKey:@"name"]];
     }
     
     UIImageView * imageView = (UIImageView *)[cell viewWithTag:1];
@@ -142,6 +148,8 @@
                     placeholderImage:[UIImage imageNamed:@"111-user.png"]];  
     UILabel *titleLabel = (UILabel *)[cell viewWithTag:2];
     titleLabel.text = title;
+    UILabel *actionLabel = (UILabel *)[cell viewWithTag:3];
+    actionLabel.text = action;
     
 //    cell.textLabel.text = title;
 //    cell.textLabel.font = [UIFont boldSystemFontOfSize:14];

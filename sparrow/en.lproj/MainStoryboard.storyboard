@@ -106,10 +106,42 @@
                     <view key="view" contentMode="scaleToFill" id="COw-s3-5Z0">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" id="06w-Gf-tfS">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="jjl-Gd-Adm" id="orG-ib-2uX"/>
+                                </connections>
+                            </searchBar>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="DkV-ha-ueT">
+                                <rect key="frame" x="-1" y="44" width="323" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="问题"/>
+                                    <segment title="用户"/>
+                                    <segment title="频道"/>
+                                    <segment title="标签"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="搜索" id="KLo-zY-cY2"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="U8L-4S-fR4" id="3uV-Im-brz"/>
+                    </connections>
                 </viewController>
+                <searchDisplayController id="U8L-4S-fR4">
+                    <connections>
+                        <outlet property="delegate" destination="jjl-Gd-Adm" id="L04-AW-5MD"/>
+                        <outlet property="searchBar" destination="06w-Gf-tfS" id="bpV-hd-C8w"/>
+                        <outlet property="searchContentsController" destination="jjl-Gd-Adm" id="MsF-5A-iYC"/>
+                        <outlet property="searchResultsDataSource" destination="jjl-Gd-Adm" id="9zM-Uv-HNb"/>
+                        <outlet property="searchResultsDelegate" destination="jjl-Gd-Adm" id="pef-Tm-kEd"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="282" y="136"/>
         </scene>
@@ -222,11 +254,11 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="李园园 回答了该问题" lineBreakMode="tailTruncation" minimumFontSize="10" id="aeh-Ci-Qsm">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="left" text="李园园 回答了该问题" lineBreakMode="tailTruncation" minimumFontSize="10" id="aeh-Ci-Qsm">
                                             <rect key="frame" x="63" y="48" width="231" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
