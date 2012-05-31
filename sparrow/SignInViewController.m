@@ -76,12 +76,11 @@
     
     if (!error) {
         NSString *response = [request responseString];
-        NSDictionary *user_info = [response objectFromJSONString];
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        [defaults setValuesForKeysWithDictionary:user_info];
-        
         if (response) {
-            
+            NSDictionary *user_info = [response objectFromJSONString];
+            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+            [defaults setValuesForKeysWithDictionary:user_info];
+            //        [defaults synchronize];
             [self performSegueWithIdentifier:@"signinsegue" sender:self];
         }
         

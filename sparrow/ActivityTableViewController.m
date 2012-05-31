@@ -140,6 +140,16 @@
         title = [[activity objectForKey:@"question"] objectForKey:@"title"];
         avatar_url = [[[activity objectForKey:@"answer"] objectForKey:@"user"] objectForKey:@"avatar_url"];
         action = [NSString stringWithFormat:@"%@ 回答了该问题", [[[activity objectForKey:@"answer"] objectForKey:@"user"] objectForKey:@"name"]];
+    }else if ([type isEqualToString:@"vote_up_question"]) {
+        title = [[activity objectForKey:@"question"] objectForKey:@"title"];
+        NSDictionary *voter = [activity objectForKey:@"voter"];
+        avatar_url = [voter objectForKey:@"avatar_url"];
+        action = [NSString stringWithFormat:@"%@ 赞同了该问题", [voter objectForKey:@"name"]];
+    }else if ([type isEqualToString:@"comment"]) {
+        title = [[activity objectForKey:@"question"] objectForKey:@"title"];
+        NSDictionary *commenter = [[activity objectForKey:@"comment"] objectForKey:@"user"];
+        avatar_url = [commenter objectForKey:@"avatar_url"];
+        action = [NSString stringWithFormat:@"%@ 评论了该问题", [commenter objectForKey:@"name"]];
     }
     
     UIImageView * imageView = (UIImageView *)[cell viewWithTag:1];
