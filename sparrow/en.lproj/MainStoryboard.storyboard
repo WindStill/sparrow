@@ -56,7 +56,7 @@
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n9V-ct-C5v" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController definesPresentationContext="YES" id="7HW-Fy-CSa" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="提问" image="187-pencil.png" id="Mrm-7B-y6I"/>
+                    <tabBarItem key="tabBarItem" title="提问" image="doc_edit.png" id="Mrm-7B-y6I"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Fn7-jD-cIN">
                         <autoresizingMask key="autoresizingMask"/>
@@ -87,7 +87,7 @@
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S6E-2J-QZa" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController definesPresentationContext="YES" id="nxO-y6-UTr" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="搜索" image="06-magnify.png" id="vnb-fm-xPl"/>
+                    <tabBarItem key="tabBarItem" title="搜索" image="zoom.png" id="vnb-fm-xPl"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="bnf-MO-teT">
                         <autoresizingMask key="autoresizingMask"/>
@@ -111,20 +111,16 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>问题</string>
+                                    <string>用户</string>
+                                    <string>频道</string>
+                                    <string>标签</string>
+                                </scopeButtonTitles>
                                 <connections>
                                     <outlet property="delegate" destination="jjl-Gd-Adm" id="orG-ib-2uX"/>
                                 </connections>
                             </searchBar>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="DkV-ha-ueT">
-                                <rect key="frame" x="-1" y="44" width="323" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="问题"/>
-                                    <segment title="用户"/>
-                                    <segment title="频道"/>
-                                    <segment title="标签"/>
-                                </segments>
-                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -149,7 +145,7 @@
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2qm-sq-yGC" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController definesPresentationContext="YES" id="XSb-NZ-sWE" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="我" image="111-user.png" id="C1e-xq-Ctp"/>
+                    <tabBarItem key="tabBarItem" title="我" image="user.png" id="C1e-xq-Ctp"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="aRd-MT-sEY">
                         <autoresizingMask key="autoresizingMask"/>
@@ -201,7 +197,7 @@
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zUR-Cq-kd0" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController definesPresentationContext="YES" id="d2n-ME-BP1" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="频道" image="70-tv.png" id="Iz6-CI-QOM"/>
+                    <tabBarItem key="tabBarItem" title="频道" image="rss.png" id="Iz6-CI-QOM"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="EKK-0M-gq6">
                         <autoresizingMask key="autoresizingMask"/>
@@ -291,8 +287,8 @@
                     <connections>
                         <segue destination="nuo-jb-mN4" kind="relationship" relationship="viewControllers" id="aNf-GF-Z3V"/>
                         <segue destination="d2n-ME-BP1" kind="relationship" relationship="viewControllers" id="W2H-vE-6N6"/>
-                        <segue destination="nxO-y6-UTr" kind="relationship" relationship="viewControllers" id="A2R-iK-3xC"/>
                         <segue destination="7HW-Fy-CSa" kind="relationship" relationship="viewControllers" id="SCJ-gk-yuJ"/>
+                        <segue destination="nxO-y6-UTr" kind="relationship" relationship="viewControllers" id="A2R-iK-3xC"/>
                         <segue destination="XSb-NZ-sWE" kind="relationship" relationship="viewControllers" id="GvU-yq-man"/>
                     </connections>
                 </tabBarController>
@@ -303,7 +299,7 @@
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e0H-cJ-3OJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController definesPresentationContext="YES" id="nuo-jb-mN4" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="动态" image="77-ekg.png" id="R7D-8o-CST"/>
+                    <tabBarItem key="tabBarItem" title="动态" image="list_bullets.png" id="R7D-8o-CST"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="HcJ-r1-Rdg">
                         <autoresizingMask key="autoresizingMask"/>
@@ -317,11 +313,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="06-magnify.png" width="24" height="24"/>
-        <image name="111-user.png" width="24" height="21"/>
-        <image name="187-pencil.png" width="23" height="23"/>
-        <image name="70-tv.png" width="24" height="24"/>
-        <image name="77-ekg.png" width="26" height="22"/>
+        <image name="doc_edit.png" width="24" height="24"/>
+        <image name="list_bullets.png" width="24" height="24"/>
+        <image name="rss.png" width="24" height="24"/>
+        <image name="user.png" width="24" height="24"/>
+        <image name="zoom.png" width="24" height="24"/>
     </resources>
     <classes>
         <class className="ActivityTableViewController" superclassName="UITableViewController">
