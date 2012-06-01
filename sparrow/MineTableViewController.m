@@ -63,26 +63,36 @@
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 1;
+    return 2;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"info";
+    static NSString *CellIdentifier = nil;
+    if (indexPath.row == 0) {
+        CellIdentifier = @"info";
+    } else if (indexPath.row == 1) {
+        CellIdentifier = @"count";
+    }
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    UIImageView * imageView = (UIImageView *)[cell viewWithTag:1];
-    NSString *avatar_url = [userInfo stringForKey:@"avatar_url"];
-    [imageView setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", PREFIX_URL, avatar_url]]
-              placeholderImage:[UIImage imageNamed:@"111-user.png"]]; 
-    
-    UILabel *nameLabel = (UILabel *)[cell viewWithTag:2];
-    NSString *name = [userInfo stringForKey:@"name"];
-    nameLabel.text = name;
-    
-    UILabel *bioLabel = (UILabel *)[cell viewWithTag:3];
-    NSString *bio = [userInfo stringForKey:@"bio"];
-    bioLabel.text = bio;
+    if (indexPath.row == 0) {
+        UIImageView * imageView = (UIImageView *)[cell viewWithTag:1];
+        NSString *avatar_url = [userInfo stringForKey:@"avatar_url"];
+        [imageView setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", PREFIX_URL, avatar_url]]
+                  placeholderImage:[UIImage imageNamed:@"111-user.png"]]; 
+        
+        UILabel *nameLabel = (UILabel *)[cell viewWithTag:2];
+        NSString *name = [userInfo stringForKey:@"name"];
+        nameLabel.text = name;
+        
+        UILabel *bioLabel = (UILabel *)[cell viewWithTag:3];
+        NSString *bio = [userInfo stringForKey:@"bio"];
+        bioLabel.text = bio;
+    } else if (indexPath.row == 1) {
+        
+    }
+        
     
     return cell;
 }
