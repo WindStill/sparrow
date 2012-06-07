@@ -6,16 +6,19 @@
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
-#import "MineTableViewController.h"
+#import "UserTableViewController.h"
 #import "Constant.h"
 #import "UIImageView+WebCache.h"
+#import "ASIHTTPRequest.h"
+#import "JSONKit.h"
 
-@interface MineTableViewController ()
+@interface UserTableViewController ()
 
 @end
 
-@implementation MineTableViewController
+@implementation UserTableViewController
 @synthesize userInfo;
+@synthesize userShow;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -31,6 +34,15 @@
     [super viewDidLoad];
 
     self.userInfo = [NSUserDefaults standardUserDefaults];
+    
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/users/%@", PREFIX_URL, [userInfo stringForKey:@"nickname"]]];
+    ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
+    [request startSynchronous];
+    NSError *error = [request error];
+    if (!error) {
+        NSString *response = [request responseString];
+        self.userShow = [response mutableObjectFromJSONString];
+    }
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  

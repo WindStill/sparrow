@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MineTableViewController : UITableViewController
+@interface UserTableViewController : UITableViewController
     <UITableViewDelegate, UITableViewDataSource>
 @property (strong, nonatomic) NSUserDefaults *userInfo;
+@property (strong, nonatomic) NSDictionary *userShow;
 @end

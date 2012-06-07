@@ -38,7 +38,7 @@
 		04C2063E156F335F00B31E3F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04C2063D156F335F00B31E3F /* CFNetwork.framework */; };
 		04C20640156F337200B31E3F /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 04C2063F156F337200B31E3F /* libz.1.2.5.dylib */; };
 		04D5D6651570D02300935C59 /* ActivityTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D5D6641570D02300935C59 /* ActivityTableViewController.m */; };
-		751E4C381577B59F007BFDD5 /* MineTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 751E4C371577B59F007BFDD5 /* MineTableViewController.m */; };
+		751E4C381577B59F007BFDD5 /* UserTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 751E4C371577B59F007BFDD5 /* UserTableViewController.m */; };
 		751E4C3C1577BE58007BFDD5 /* cog_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 751E4C3A1577BE58007BFDD5 /* cog_icon.png */; };
 		751E4C3D1577BE58007BFDD5 /* cog_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 751E4C3B1577BE58007BFDD5 /* cog_icon@2x.png */; };
 		8130E9F7AE514DFBB2AE7143 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8FAB3535DA4D26928B43D5 /* libPods.a */; };
@@ -84,8 +84,8 @@
 		04D5D6641570D02300935C59 /* ActivityTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityTableViewController.m; sourceTree = "<group>"; };
 		04D5D6671570D0BD00935C59 /* Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
 		170FFE6909894292A7C01327 /* Pods.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
-		751E4C361577B59F007BFDD5 /* MineTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineTableViewController.h; sourceTree = "<group>"; };
-		751E4C371577B59F007BFDD5 /* MineTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineTableViewController.m; sourceTree = "<group>"; };
+		751E4C361577B59F007BFDD5 /* UserTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; path = UserTableViewController.h; sourceTree = "<group>"; };
+		751E4C371577B59F007BFDD5 /* UserTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTableViewController.m; sourceTree = "<group>"; };
 		751E4C3A1577BE58007BFDD5 /* cog_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cog_icon.png; sourceTree = "<group>"; };
 		751E4C3B1577BE58007BFDD5 /* cog_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cog_icon@2x.png"; sourceTree = "<group>"; };
 		BD8FAB3535DA4D26928B43D5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -177,8 +177,8 @@
 				04C2061F156F302400B31E3F /* AppDelegate.h */,
 				04C20620156F302400B31E3F /* AppDelegate.m */,
 				04C20622156F302400B31E3F /* MainStoryboard.storyboard */,
-				751E4C361577B59F007BFDD5 /* MineTableViewController.h */,
-				751E4C371577B59F007BFDD5 /* MineTableViewController.m */,
+				751E4C361577B59F007BFDD5 /* UserTableViewController.h */,
+				751E4C371577B59F007BFDD5 /* UserTableViewController.m */,
 				04C20625156F302400B31E3F /* SignInViewController.h */,
 				04C20626156F302400B31E3F /* SignInViewController.m */,
 				04D5D6631570D02300935C59 /* ActivityTableViewController.h */,
@@ -304,7 +304,7 @@
 				04C20621156F302400B31E3F /* AppDelegate.m in Sources */,
 				04C20627156F302400B31E3F /* SignInViewController.m in Sources */,
 				04D5D6651570D02300935C59 /* ActivityTableViewController.m in Sources */,
-				751E4C381577B59F007BFDD5 /* MineTableViewController.m in Sources */,
+				751E4C381577B59F007BFDD5 /* UserTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
