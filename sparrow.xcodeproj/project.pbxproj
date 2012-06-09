@@ -25,6 +25,8 @@
 		041B9366157787F600EB34EC /* doc_edit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 041B9364157787F600EB34EC /* doc_edit@2x.png */; };
 		041B93691577881F00EB34EC /* pencil.png in Resources */ = {isa = PBXBuildFile; fileRef = 041B93671577881F00EB34EC /* pencil.png */; };
 		041B936A1577881F00EB34EC /* pencil@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 041B93681577881F00EB34EC /* pencil@2x.png */; };
+		04395CA315830BF400A8B488 /* UserShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04395CA215830BF400A8B488 /* UserShowViewController.m */; };
+		04395CB715834EA600A8B488 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04395CB615834EA600A8B488 /* SearchViewController.m */; };
 		04C20611156F302400B31E3F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04C20610156F302400B31E3F /* UIKit.framework */; };
 		04C20613156F302400B31E3F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04C20612156F302400B31E3F /* Foundation.framework */; };
 		04C20615156F302400B31E3F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04C20614156F302400B31E3F /* CoreGraphics.framework */; };
@@ -63,6 +65,10 @@
 		041B9364157787F600EB34EC /* doc_edit@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "doc_edit@2x.png"; sourceTree = "<group>"; };
 		041B93671577881F00EB34EC /* pencil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pencil.png; sourceTree = "<group>"; };
 		041B93681577881F00EB34EC /* pencil@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pencil@2x.png"; sourceTree = "<group>"; };
+		04395CA115830BF400A8B488 /* UserShowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserShowViewController.h; sourceTree = "<group>"; };
+		04395CA215830BF400A8B488 /* UserShowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserShowViewController.m; sourceTree = "<group>"; };
+		04395CB515834EA500A8B488 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		04395CB615834EA600A8B488 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		04C2060C156F302400B31E3F /* sparrow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sparrow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04C20610156F302400B31E3F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		04C20612156F302400B31E3F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -84,7 +90,7 @@
 		04D5D6641570D02300935C59 /* ActivityTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityTableViewController.m; sourceTree = "<group>"; };
 		04D5D6671570D0BD00935C59 /* Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
 		170FFE6909894292A7C01327 /* Pods.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
-		751E4C361577B59F007BFDD5 /* UserTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; path = UserTableViewController.h; sourceTree = "<group>"; };
+		751E4C361577B59F007BFDD5 /* UserTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserTableViewController.h; sourceTree = "<group>"; };
 		751E4C371577B59F007BFDD5 /* UserTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTableViewController.m; sourceTree = "<group>"; };
 		751E4C3A1577BE58007BFDD5 /* cog_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cog_icon.png; sourceTree = "<group>"; };
 		751E4C3B1577BE58007BFDD5 /* cog_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cog_icon@2x.png"; sourceTree = "<group>"; };
@@ -177,6 +183,10 @@
 				04C2061F156F302400B31E3F /* AppDelegate.h */,
 				04C20620156F302400B31E3F /* AppDelegate.m */,
 				04C20622156F302400B31E3F /* MainStoryboard.storyboard */,
+				04395CB515834EA500A8B488 /* SearchViewController.h */,
+				04395CB615834EA600A8B488 /* SearchViewController.m */,
+				04395CA115830BF400A8B488 /* UserShowViewController.h */,
+				04395CA215830BF400A8B488 /* UserShowViewController.m */,
 				751E4C361577B59F007BFDD5 /* UserTableViewController.h */,
 				751E4C371577B59F007BFDD5 /* UserTableViewController.m */,
 				04C20625156F302400B31E3F /* SignInViewController.h */,
@@ -305,6 +315,8 @@
 				04C20627156F302400B31E3F /* SignInViewController.m in Sources */,
 				04D5D6651570D02300935C59 /* ActivityTableViewController.m in Sources */,
 				751E4C381577B59F007BFDD5 /* UserTableViewController.m in Sources */,
+				04395CA315830BF400A8B488 /* UserShowViewController.m in Sources */,
+				04395CB715834EA600A8B488 /* SearchViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

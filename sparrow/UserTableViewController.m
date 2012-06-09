@@ -34,11 +34,15 @@
     [super viewDidLoad];
 
     self.userInfo = [NSUserDefaults standardUserDefaults];
+    NSString *nickname = [userInfo stringForKey:@"nickname"];
+    NSString *authenticationToken = [userInfo stringForKey:@"authentication_token"];
     
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/users/%@", PREFIX_URL, [userInfo stringForKey:@"nickname"]]];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/users/%@.json?auth_token=%@", PREFIX_URL, nickname, authenticationToken]];
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
+//    [request addRequestHeader:@"Content-Type" value:@"application/json; charset=utf-8"];
     [request startSynchronous];
     NSError *error = [request error];
+    NSLog(@"11111");
     if (!error) {
         NSString *response = [request responseString];
         self.userShow = [response mutableObjectFromJSONString];
@@ -102,7 +106,12 @@
         NSString *bio = [userInfo stringForKey:@"bio"];
         bioLabel.text = bio;
     } else if (indexPath.row == 1) {
-        
+        UILabel *listCountLabel = (UILabel *)[cell viewWithTag:1];
+        listCountLabel.text = [NSString stringWithFormat:@"%@", [userShow objectForKey:@"channels_count"]];
+        UILabel *followingCount = (UILabel *)[cell viewWithTag:2];
+        followingCount.text = [NSString stringWithFormat:@"%@", [userShow objectForKey:@"following_count"]];
+        UILabel *followerCount = (UILabel *)[cell viewWithTag:3];
+        followerCount.text = [NSString stringWithFormat:@"%@", [userShow objectForKey:@"follower_count"]];
     }
         
     

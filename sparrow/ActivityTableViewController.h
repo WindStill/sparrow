@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ActivityTableViewController : UITableViewController
-<UITableViewDelegate, UITableViewDataSource>
+
 @property (strong, nonatomic) NSArray *listData;
 @end
