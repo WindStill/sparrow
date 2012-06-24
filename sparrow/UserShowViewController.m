@@ -77,11 +77,11 @@
         NSString *response = [request responseString];
         userShow = [response mutableObjectFromJSONString];
         
-        [self drawRect:110];
+        [self drawRect:110 lineColor:[UIColor colorWithRed:224/255.0f green:224/255.0f blue:224/255.0f alpha:1.0f]];
         self.channelsCount.text = [NSString stringWithFormat:@"%@", [userShow objectForKey:@"channels_count"]];
         self.followingCount.text = [NSString stringWithFormat:@"%@", [userShow objectForKey:@"following_count"]];
         self.followerCount.text = [NSString stringWithFormat:@"%@", [userShow objectForKey:@"follower_count"]];
-        [self drawRect:180];
+        [self drawRect:180 lineColor:[UIColor colorWithRed:224/255.0f green:224/255.0f blue:224/255.0f alpha:1.0f]];
         
         
     }
@@ -106,9 +106,9 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-- (void)drawRect:(NSInteger)height {
+- (void)drawRect:(NSInteger)height lineColor:(UIColor *)color {
     UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0, height, self.view.bounds.size.width, 1)];
-    lineView.backgroundColor = [UIColor lightGrayColor];
+    lineView.backgroundColor = color;
     [self.view addSubview:lineView];
 }
 

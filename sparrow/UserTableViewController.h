@@ -12,4 +12,6 @@
     <UITableViewDelegate, UITableViewDataSource>
 @property (strong, nonatomic) NSUserDefaults *userInfo;
 @property (strong, nonatomic) NSDictionary *userShow;
+@property (strong, nonatomic) NSDictionary *items;
+@property (strong, nonatomic) NSArray *groups;
 @end
