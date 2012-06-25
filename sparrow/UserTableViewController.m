@@ -11,6 +11,7 @@
 #import "UIImageView+WebCache.h"
 #import "ASIHTTPRequest.h"
 #import "JSONKit.h"
+#import "QuartzCore/QuartzCore.h"
 
 @interface UserTableViewController ()
 
@@ -104,16 +105,31 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"cell"];
     }
     NSString *text = [group objectAtIndex:row];
-    cell.textLabel.text = text;
+
     if (section == 0) {
+        cell.textLabel.text = text;
         UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", text]]; 
         cell.imageView.image = image;
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        NSInteger itemCount = 0;
+        if (row == 0) {
+            itemCount = [userShow objectForKey:@"answers_count"];
+        } else if (row == 1) {
+            itemCount = [userShow objectForKey:@"questions_count"];
+        } else {
+            itemCount = [userShow objectForKey:@"all_accept"];
+        }
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", itemCount];
+        cell.detailTextLabel.font = [UIFont boldSystemFontOfSize:(18.0f)];
     } else {
-        cell.textLabel.textAlignment = UITextAlignmentCenter;
+        UILabel *textLabel = [[UILabel alloc]initWithFrame:CGRectMake(105, 1, 100, 38)];
+        textLabel.textAlignment = UITextAlignmentCenter;
+        textLabel.font = [UIFont boldSystemFontOfSize:(18.0f)];
+        textLabel.text = text;
+        [cell addSubview:textLabel];
     }
     
     cell.backgroundColor = [UIColor whiteColor];
@@ -299,23 +315,29 @@
 }
 
 - (void)initTableViewHeader {
-    self.tableView.backgroundColor = [UIColor whiteColor];
+//    self.tableView.backgroundColor = [UIColor whiteColor];
     
-    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(10, 0, 320, 101)];
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(10, 0, 320, 106)];
     [self.tableView setTableHeaderView:headerView];
     
     UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(20, 18, 81, 81)];
+    imageView.layer.masksToBounds = YES;
+    imageView.layer.cornerRadius = 5.0;
+    imageView.layer.borderWidth = 1.0;
+    imageView.layer.borderColor = [[UIColor lightGrayColor] CGColor];
     NSString *avatar_url = [userInfo stringForKey:@"avatar_url"];
     [imageView setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", PREFIX_URL, avatar_url]]
                      placeholderImage:[UIImage imageNamed:@"111-user.png"]]; 
     
     UILabel *nameLabel = [[UILabel alloc]initWithFrame:CGRectMake(109, 21, 191, 30)];
     nameLabel.font = [UIFont boldSystemFontOfSize:20];
+    nameLabel.backgroundColor = [UIColor clearColor];
     NSString *name = [userInfo stringForKey:@"name"];
     nameLabel.text = name;
     
     UILabel *bioLabel = [[UILabel alloc]initWithFrame:CGRectMake(109, 54, 191, 40)];
     bioLabel.font = [UIFont systemFontOfSize:14];
+    bioLabel.backgroundColor = [UIColor clearColor];
     bioLabel.textColor = [UIColor darkGrayColor];
     bioLabel.numberOfLines = 2;
     NSString *bio = [userInfo stringForKey:@"bio"];

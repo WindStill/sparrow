@@ -25,6 +25,7 @@
 		041B9366157787F600EB34EC /* doc_edit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 041B9364157787F600EB34EC /* doc_edit@2x.png */; };
 		041B93691577881F00EB34EC /* pencil.png in Resources */ = {isa = PBXBuildFile; fileRef = 041B93671577881F00EB34EC /* pencil.png */; };
 		041B936A1577881F00EB34EC /* pencil@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 041B93681577881F00EB34EC /* pencil@2x.png */; };
+		042ED02115988593001F285B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 042ED02015988593001F285B /* QuartzCore.framework */; };
 		04395CA315830BF400A8B488 /* UserShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04395CA215830BF400A8B488 /* UserShowViewController.m */; };
 		04395CB715834EA600A8B488 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04395CB615834EA600A8B488 /* SearchViewController.m */; };
 		04BA25F71598733E00C2C630 /* 回答.png in Resources */ = {isa = PBXBuildFile; fileRef = 04BA25F51598733E00C2C630 /* 回答.png */; };
@@ -71,6 +72,7 @@
 		041B9364157787F600EB34EC /* doc_edit@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "doc_edit@2x.png"; sourceTree = "<group>"; };
 		041B93671577881F00EB34EC /* pencil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pencil.png; sourceTree = "<group>"; };
 		041B93681577881F00EB34EC /* pencil@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pencil@2x.png"; sourceTree = "<group>"; };
+		042ED02015988593001F285B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		04395CA115830BF400A8B488 /* UserShowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserShowViewController.h; sourceTree = "<group>"; };
 		04395CA215830BF400A8B488 /* UserShowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserShowViewController.m; sourceTree = "<group>"; };
 		04395CB515834EA500A8B488 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				042ED02115988593001F285B /* QuartzCore.framework in Frameworks */,
 				04C20640156F337200B31E3F /* libz.1.2.5.dylib in Frameworks */,
 				04C2063E156F335F00B31E3F /* CFNetwork.framework in Frameworks */,
 				04C2063C156F335800B31E3F /* SystemConfiguration.framework in Frameworks */,
@@ -183,6 +186,7 @@
 		04C2060F156F302400B31E3F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				042ED02015988593001F285B /* QuartzCore.framework */,
 				04C2063F156F337200B31E3F /* libz.1.2.5.dylib */,
 				04C2063D156F335F00B31E3F /* CFNetwork.framework */,
 				04C2063B156F335800B31E3F /* SystemConfiguration.framework */,
