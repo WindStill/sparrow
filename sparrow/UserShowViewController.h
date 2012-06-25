@@ -17,6 +17,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *followingCount;
 @property (strong, nonatomic) IBOutlet UILabel *followerCount;
 
-- (void)drawRect:(NSInteger)height;
+- (void)drawRect:(NSInteger)height lineColor:(UIColor *)color;
 
 @end

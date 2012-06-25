@@ -106,7 +106,16 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
-    cell.textLabel.text = [group objectAtIndex:row];
+    NSString *text = [group objectAtIndex:row];
+    cell.textLabel.text = text;
+    if (section == 0) {
+        UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", text]]; 
+        cell.imageView.image = image;
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    } else {
+        cell.textLabel.textAlignment = UITextAlignmentCenter;
+    }
+    
     cell.backgroundColor = [UIColor whiteColor];
     return cell;
 
@@ -200,6 +209,14 @@
      */
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSInteger section = [indexPath section];
+    if (section == 0) {
+        return 65.0f;
+    }
+    return 40.0f;
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     if (section == 0) {
         return 65.0f;
@@ -214,12 +231,6 @@
         UIView *headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 320, screenRect.size.height)];
         headerView.autoresizesSubviews = YES;
         headerView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-        
-        //        listCountLabel.text = [NSString stringWithFormat:@"%@", [userShow objectForKey:@"channels_count"]];
-        //        UILabel *followingCount = (UILabel *)[cell viewWithTag:2];
-        //        followingCount.text = [NSString stringWithFormat:@"%@", [userShow objectForKey:@"following_count"]];
-        //        UILabel *followerCount = (UILabel *)[cell viewWithTag:3];
-        //        followerCount.text = [NSString stringWithFormat:@"%@", [userShow objectForKey:@"follower_count"]];
         
         UIButton *channelButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         channelButton.frame = CGRectMake(20, 7, 90, 46);

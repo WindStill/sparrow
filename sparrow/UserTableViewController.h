@@ -14,4 +14,7 @@
 @property (strong, nonatomic) NSDictionary *userShow;
 @property (strong, nonatomic) NSDictionary *items;
 @property (strong, nonatomic) NSArray *groups;
+
+- (void)initGroupsAndItems;
+- (void)initTableViewHeader;
 @end
