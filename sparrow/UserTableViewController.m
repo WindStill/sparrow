@@ -12,6 +12,7 @@
 #import "ASIHTTPRequest.h"
 #import "JSONKit.h"
 #import "QuartzCore/QuartzCore.h"
+#import "SignInViewController.h"
 
 @interface UserTableViewController ()
 
@@ -116,11 +117,11 @@
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         NSInteger itemCount = 0;
         if (row == 0) {
-            itemCount = [userShow objectForKey:@"answers_count"];
+            itemCount = (NSInteger)[userShow objectForKey:@"answers_count"];
         } else if (row == 1) {
-            itemCount = [userShow objectForKey:@"questions_count"];
+            itemCount = (NSInteger)[userShow objectForKey:@"all_accept"];
         } else {
-            itemCount = [userShow objectForKey:@"all_accept"];
+            itemCount = (NSInteger)[userShow objectForKey:@"questions_count"];
         }
         cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", itemCount];
         cell.detailTextLabel.font = [UIFont boldSystemFontOfSize:(18.0f)];
@@ -173,49 +174,25 @@
 //    return cell;
 //}
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSInteger section = [indexPath section];
+    if (section == 2) {
+        SignInViewController *signInViewControlloer = [self.storyboard instantiateViewControllerWithIdentifier:@"signin"];
+        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/users/sign_out", PREFIX_URL]];
+        ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
+        [request startSynchronous];
+        NSError *error = [request error];
+        if (!error) {
+            NSString *appDomin = [[NSBundle mainBundle] bundleIdentifier];
+            [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomin];
+//            [self dismissModalViewControllerAnimated:YES];
+            [self presentModalViewController:signInViewControlloer animated:YES];
+        }
+
+    }
     // Navigation logic may go here. Create and push another view controller.
     /*
      <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
@@ -307,7 +284,7 @@
 
 - (void)initGroupsAndItems {
     self.groups = [[NSArray alloc] initWithObjects:@"options", @"feedback",@"signout", nil];
-    NSArray *options = [[NSArray alloc] initWithObjects:@"回答", @"提问", @"胜出", nil];
+    NSArray *options = [[NSArray alloc] initWithObjects:@"回答", @"胜出", @"提问", nil];
     NSArray *feedback = [[NSArray alloc] initWithObjects:@"问题反馈", nil];
     NSArray *signout = [[NSArray alloc] initWithObjects:@"退出账号", nil];
     self.items = [NSDictionary dictionaryWithObjectsAndKeys:

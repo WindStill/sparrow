@@ -69,6 +69,7 @@
     NSString *username = self.username.text;
     NSString *password = self.password.text;
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
+    NSLog(username);
     [request setPostValue:username forKey:@"user[login]"];
     [request setPostValue:password forKey:@"user[password]"];
     [request startSynchronous];
@@ -78,10 +79,12 @@
         NSString *response = [request responseString];
         if (response) {
             NSDictionary *user_info = [response objectFromJSONString];
+            NSLog([user_info objectForKey:@"authentication_token"]);
             NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
             [defaults setValuesForKeysWithDictionary:user_info];
-            //        [defaults synchronize];
+            [defaults synchronize];
             [self performSegueWithIdentifier:@"signinsegue" sender:self];
+            NSLog([defaults stringForKey:@"authentication_token"]);
         }
         
 }

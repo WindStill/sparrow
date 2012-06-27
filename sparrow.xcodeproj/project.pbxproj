@@ -28,6 +28,7 @@
 		042ED02115988593001F285B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 042ED02015988593001F285B /* QuartzCore.framework */; };
 		04395CA315830BF400A8B488 /* UserShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04395CA215830BF400A8B488 /* UserShowViewController.m */; };
 		04395CB715834EA600A8B488 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04395CB615834EA600A8B488 /* SearchViewController.m */; };
+		04877EF6159AB3CD006DD1D4 /* loginLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 04877EF5159AB3CD006DD1D4 /* loginLogo.png */; };
 		04BA25F71598733E00C2C630 /* 回答.png in Resources */ = {isa = PBXBuildFile; fileRef = 04BA25F51598733E00C2C630 /* 回答.png */; };
 		04BA25F81598733E00C2C630 /* 回答@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04BA25F61598733E00C2C630 /* 回答@2x.png */; };
 		04BA25FC1598738300C2C630 /* 胜出.png in Resources */ = {isa = PBXBuildFile; fileRef = 04BA25FA1598738300C2C630 /* 胜出.png */; };
@@ -77,6 +78,7 @@
 		04395CA215830BF400A8B488 /* UserShowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserShowViewController.m; sourceTree = "<group>"; };
 		04395CB515834EA500A8B488 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		04395CB615834EA600A8B488 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		04877EF5159AB3CD006DD1D4 /* loginLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginLogo.png; sourceTree = "<group>"; };
 		04BA25F51598733E00C2C630 /* 回答.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "回答.png"; sourceTree = "<group>"; };
 		04BA25F61598733E00C2C630 /* 回答@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "回答@2x.png"; sourceTree = "<group>"; };
 		04BA25FA1598738300C2C630 /* 胜出.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "胜出.png"; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				751E4C3B1577BE58007BFDD5 /* cog_icon@2x.png */,
 				041B9347157784EC00EB34EC /* house@2x.png */,
 				04BA25F51598733E00C2C630 /* 回答.png */,
+				04877EF5159AB3CD006DD1D4 /* loginLogo.png */,
 				04BA25F61598733E00C2C630 /* 回答@2x.png */,
 				041B93531577866500EB34EC /* rss.png */,
 				04BA25FA1598738300C2C630 /* 胜出.png */,
@@ -311,6 +314,7 @@
 				04BA25FD1598738300C2C630 /* 胜出@2x.png in Resources */,
 				04BA2600159873D500C2C630 /* 提问.png in Resources */,
 				04BA2601159873D500C2C630 /* 提问@2x.png in Resources */,
+				04877EF6159AB3CD006DD1D4 /* loginLogo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

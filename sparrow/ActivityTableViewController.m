@@ -46,7 +46,7 @@
     if (!error) {
         NSString *response = [request responseString];
         self.listData = [response mutableObjectFromJSONString];
-        NSLog(@"row: %lu", (unsigned long)[listData count]);
+//        NSLog(@"row: %lu", (unsigned long)[listData count]);
     }
 
     // Uncomment the following line to preserve selection between presentations.
