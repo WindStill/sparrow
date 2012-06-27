@@ -60,8 +60,6 @@
     NSString *nickname = [userInfo stringForKey:@"nickname"];
     NSString *authenticationToken = [userInfo stringForKey:@"authentication_token"];
     
-    NSLog(nickname);
-    
     self.navigationItem.title = name;
     [self.userAvatar setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", PREFIX_URL, avatarUrl]]
               placeholderImage:[UIImage imageNamed:@"111-user.png"]];

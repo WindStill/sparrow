@@ -180,7 +180,6 @@
 {
     NSInteger section = [indexPath section];
     if (section == 2) {
-        SignInViewController *signInViewControlloer = [self.storyboard instantiateViewControllerWithIdentifier:@"signin"];
         NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/users/sign_out", PREFIX_URL]];
         ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
         [request startSynchronous];
@@ -189,6 +188,7 @@
             NSString *appDomin = [[NSBundle mainBundle] bundleIdentifier];
             [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomin];
 //            [self dismissModalViewControllerAnimated:YES];
+            SignInViewController *signInViewControlloer = [self.storyboard instantiateViewControllerWithIdentifier:@"signin"];
             [self presentModalViewController:signInViewControlloer animated:YES];
         }
 

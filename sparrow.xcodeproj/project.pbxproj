@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04193F61159B1F7900ECAB48 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04193F60159B1F7900ECAB48 /* MainViewController.m */; };
 		041B9349157784EC00EB34EC /* house@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 041B9347157784EC00EB34EC /* house@2x.png */; };
 		041B934A157784EC00EB34EC /* magnifying_glass@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 041B9348157784EC00EB34EC /* magnifying_glass@2x.png */; };
 		041B934D1577850600EB34EC /* house.png in Resources */ = {isa = PBXBuildFile; fileRef = 041B934B1577850600EB34EC /* house.png */; };
@@ -55,6 +56,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04193F5F159B1F7900ECAB48 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		04193F60159B1F7900ECAB48 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		041B9347157784EC00EB34EC /* house@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "house@2x.png"; sourceTree = "<group>"; };
 		041B9348157784EC00EB34EC /* magnifying_glass@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "magnifying_glass@2x.png"; sourceTree = "<group>"; };
 		041B934B1577850600EB34EC /* house.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = house.png; sourceTree = "<group>"; };
@@ -220,6 +223,8 @@
 				04D5D6641570D02300935C59 /* ActivityTableViewController.m */,
 				04D5D6671570D0BD00935C59 /* Constant.h */,
 				04C20617156F302400B31E3F /* Supporting Files */,
+				04193F5F159B1F7900ECAB48 /* MainViewController.h */,
+				04193F60159B1F7900ECAB48 /* MainViewController.m */,
 			);
 			path = sparrow;
 			sourceTree = "<group>";
@@ -349,6 +354,7 @@
 				751E4C381577B59F007BFDD5 /* UserTableViewController.m in Sources */,
 				04395CA315830BF400A8B488 /* UserShowViewController.m in Sources */,
 				04395CB715834EA600A8B488 /* SearchViewController.m in Sources */,
+				04193F61159B1F7900ECAB48 /* MainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
