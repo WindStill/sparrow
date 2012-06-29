@@ -4,9 +4,13 @@ PODS:
   - JSONKit (1.5pre)
   - Reachability (3.0.0)
   - SDWebImage (2.6)
+  - SocketRocket (0.1)
+  - libPusher (1.3):
+    - SocketRocket (from `git://github.com/square/SocketRocket', commit `ec6c145f4a')
 
 DEPENDENCIES:
   - ASIHTTPRequest
   - JSONKit (~> 1.4)
   - Reachability (~> 3.0.0)
   - SDWebImage
+  - libPusher

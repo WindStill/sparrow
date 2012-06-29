@@ -15,6 +15,8 @@
 
 @implementation ActivityTableViewController
 @synthesize listData;
+@synthesize client;
+@synthesize channel;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -48,6 +50,13 @@
         self.listData = [response mutableObjectFromJSONString];
 //        NSLog(@"row: %lu", (unsigned long)[listData count]);
     }
+    
+    client = [PTPusher pusherWithKey:@"bbfde76f47dd4fabff88" connectAutomatically:YES encrypted:NO];
+    [client connect];
+    channel = [client subscribeToChannelNamed:@"notify_293"];
+    [channel bindToEventNamed:@"message_created" handleWithBlock:^(PTPusherEvent *channelEvent) {
+        NSLog(@"新私信%@", channelEvent.data);
+    }];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -226,6 +235,21 @@
 */
 
 #pragma mark - Table view delegate
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    UITableViewController *destination = segue.destinationViewController;
+    if ([destination respondsToSelector:@selector(setDelegate:)]) {
+        [destination setValue:self forKey:@"delegate"];
+    }
+    if ([destination respondsToSelector:@selector(setSampleDetail:)]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+        
+        NSDictionary *activity = (NSDictionary *)[listData objectAtIndex:indexPath.row];
+        NSDictionary *questionDetail = (NSDictionary *)[activity objectForKey:@"question"];
+        [destination setValue:questionDetail forKey:@"sampleDetail"];
+    }
+}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {

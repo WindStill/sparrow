@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface MainViewController : UIViewController
+@property (strong, nonatomic) IBOutlet UIButton *button;
 
 - (IBAction)buttonPressed:(id)sender;
 @end

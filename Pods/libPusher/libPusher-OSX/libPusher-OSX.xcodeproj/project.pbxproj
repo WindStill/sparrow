@@ -1,0 +1,626 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A3382DFA1525D0AF0025550D /* JSONKit.h in Headers */ = {isa = PBXBuildFile; fileRef = A3382DF91525D0AB0025550D /* JSONKit.h */; };
+		A3382DFE1525D0C90025550D /* PTJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = A3382DFB1525D0C90025550D /* PTJSON.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A3382DFF1525D0C90025550D /* PTJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = A3382DFC1525D0C90025550D /* PTJSON.m */; };
+		A3382E001525D0C90025550D /* PTJSONParser.h in Headers */ = {isa = PBXBuildFile; fileRef = A3382DFD1525D0C90025550D /* PTJSONParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A37E161214E4C95C00DCA3A6 /* base64.c in Sources */ = {isa = PBXBuildFile; fileRef = A37E160B14E4C95B00DCA3A6 /* base64.c */; };
+		A37E161314E4C95C00DCA3A6 /* base64.h in Headers */ = {isa = PBXBuildFile; fileRef = A37E160C14E4C95B00DCA3A6 /* base64.h */; };
+		A37E161414E4C95C00DCA3A6 /* NSData+SRB64Additions.h in Headers */ = {isa = PBXBuildFile; fileRef = A37E160D14E4C95B00DCA3A6 /* NSData+SRB64Additions.h */; };
+		A37E161514E4C95C00DCA3A6 /* NSData+SRB64Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = A37E160E14E4C95C00DCA3A6 /* NSData+SRB64Additions.m */; };
+		A37E161614E4C95C00DCA3A6 /* SocketRocket-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = A37E160F14E4C95C00DCA3A6 /* SocketRocket-Prefix.pch */; };
+		A37E161714E4C95C00DCA3A6 /* SRWebSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = A37E161014E4C95C00DCA3A6 /* SRWebSocket.h */; };
+		A37E161814E4C95C00DCA3A6 /* SRWebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = A37E161114E4C95C00DCA3A6 /* SRWebSocket.m */; };
+		A37E161C14E4C9CC00DCA3A6 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A37E161B14E4C9CC00DCA3A6 /* Security.framework */; };
+		A37E162014E4CA6400DCA3A6 /* libicucore.A.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A37E161F14E4CA6400DCA3A6 /* libicucore.A.dylib */; };
+		A37E162214E4CC0000DCA3A6 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A37E162114E4CBFF00DCA3A6 /* CoreServices.framework */; };
+		A37E168214E5736300DCA3A6 /* PTPusherMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = A37E168114E5736300DCA3A6 /* PTPusherMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A3CA675914DBCB2D003E2F1E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3CA675814DBCB2D003E2F1E /* Cocoa.framework */; };
+		A3CA676314DBCB2D003E2F1E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A3CA676114DBCB2D003E2F1E /* InfoPlist.strings */; };
+		A3CA678C14DBCB95003E2F1E /* NSDictionary+QueryString.h in Headers */ = {isa = PBXBuildFile; fileRef = A3CA676D14DBCB94003E2F1E /* NSDictionary+QueryString.h */; };
+		A3CA678D14DBCB95003E2F1E /* NSDictionary+QueryString.m in Sources */ = {isa = PBXBuildFile; fileRef = A3CA676E14DBCB94003E2F1E /* NSDictionary+QueryString.m */; };
+		A3CA678E14DBCB95003E2F1E /* NSString+Hashing.h in Headers */ = {isa = PBXBuildFile; fileRef = A3CA676F14DBCB94003E2F1E /* NSString+Hashing.h */; };
+		A3CA678F14DBCB95003E2F1E /* NSString+Hashing.m in Sources */ = {isa = PBXBuildFile; fileRef = A3CA677014DBCB94003E2F1E /* NSString+Hashing.m */; };
+		A3CA679014DBCB95003E2F1E /* PTBlockEventListener.h in Headers */ = {isa = PBXBuildFile; fileRef = A3CA677114DBCB94003E2F1E /* PTBlockEventListener.h */; };
+		A3CA679114DBCB95003E2F1E /* PTBlockEventListener.m in Sources */ = {isa = PBXBuildFile; fileRef = A3CA677214DBCB94003E2F1E /* PTBlockEventListener.m */; };
+		A3CA679214DBCB95003E2F1E /* PTEventListener.h in Headers */ = {isa = PBXBuildFile; fileRef = A3CA677314DBCB95003E2F1E /* PTEventListener.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A3CA679314DBCB95003E2F1E /* PTPusher.h in Headers */ = {isa = PBXBuildFile; fileRef = A3CA677414DBCB95003E2F1E /* PTPusher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A3CA679414DBCB95003E2F1E /* PTPusher.m in Sources */ = {isa = PBXBuildFile; fileRef = A3CA677514DBCB95003E2F1E /* PTPusher.m */; };
+		A3CA679514DBCB95003E2F1E /* PTPusherAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = A3CA677614DBCB95003E2F1E /* PTPusherAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A3CA679614DBCB95003E2F1E /* PTPusherAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = A3CA677714DBCB95003E2F1E /* PTPusherAPI.m */; };
+		A3CA679714DBCB95003E2F1E /* PTPusherChannel.h in Headers */ = {isa = PBXBuildFile; fileRef = A3CA677814DBCB95003E2F1E /* PTPusherChannel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A3CA679814DBCB95003E2F1E /* PTPusherChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = A3CA677914DBCB95003E2F1E /* PTPusherChannel.m */; };
+		A3CA679914DBCB95003E2F1E /* PTPusherChannelAuthorizationOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = A3CA677A14DBCB95003E2F1E /* PTPusherChannelAuthorizationOperation.h */; };
+		A3CA679A14DBCB95003E2F1E /* PTPusherChannelAuthorizationOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A3CA677B14DBCB95003E2F1E /* PTPusherChannelAuthorizationOperation.m */; };
+		A3CA679B14DBCB95003E2F1E /* PTPusherConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = A3CA677C14DBCB95003E2F1E /* PTPusherConnection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A3CA679C14DBCB95003E2F1E /* PTPusherConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = A3CA677D14DBCB95003E2F1E /* PTPusherConnection.m */; };
+		A3CA679F14DBCB95003E2F1E /* PTPusherDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = A3CA678014DBCB95003E2F1E /* PTPusherDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A3CA67A014DBCB95003E2F1E /* PTPusherErrors.h in Headers */ = {isa = PBXBuildFile; fileRef = A3CA678114DBCB95003E2F1E /* PTPusherErrors.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A3CA67A114DBCB95003E2F1E /* PTPusherEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = A3CA678214DBCB95003E2F1E /* PTPusherEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A3CA67A214DBCB95003E2F1E /* PTPusherEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = A3CA678314DBCB95003E2F1E /* PTPusherEvent.m */; };
+		A3CA67A314DBCB95003E2F1E /* PTPusherEventDispatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = A3CA678414DBCB95003E2F1E /* PTPusherEventDispatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A3CA67A414DBCB95003E2F1E /* PTPusherEventDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A3CA678514DBCB95003E2F1E /* PTPusherEventDispatcher.m */; };
+		A3CA67A514DBCB95003E2F1E /* PTPusherEventPublisher.h in Headers */ = {isa = PBXBuildFile; fileRef = A3CA678614DBCB95003E2F1E /* PTPusherEventPublisher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A3CA67A614DBCB95003E2F1E /* PTPusherPresenceChannelDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = A3CA678714DBCB95003E2F1E /* PTPusherPresenceChannelDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A3CA67A714DBCB95003E2F1E /* PTTargetActionEventListener.h in Headers */ = {isa = PBXBuildFile; fileRef = A3CA678814DBCB95003E2F1E /* PTTargetActionEventListener.h */; };
+		A3CA67A814DBCB95003E2F1E /* PTTargetActionEventListener.m in Sources */ = {isa = PBXBuildFile; fileRef = A3CA678914DBCB95003E2F1E /* PTTargetActionEventListener.m */; };
+		A3CA67A914DBCB95003E2F1E /* PTURLRequestOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = A3CA678A14DBCB95003E2F1E /* PTURLRequestOperation.h */; };
+		A3CA67AA14DBCB95003E2F1E /* PTURLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A3CA678B14DBCB95003E2F1E /* PTURLRequestOperation.m */; };
+		A3F203C814DEF36C0093C793 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3CA675814DBCB2D003E2F1E /* Cocoa.framework */; };
+		A3F203D214DEF36C0093C793 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A3F203D014DEF36C0093C793 /* InfoPlist.strings */; };
+		A3F203D414DEF36C0093C793 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F203D314DEF36C0093C793 /* main.m */; };
+		A3F203D814DEF36C0093C793 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = A3F203D614DEF36C0093C793 /* Credits.rtf */; };
+		A3F203DB14DEF36C0093C793 /* LRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F203DA14DEF36C0093C793 /* LRAppDelegate.m */; };
+		A3F203DE14DEF36C0093C793 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3F203DC14DEF36C0093C793 /* MainMenu.xib */; };
+		A3F203E314DEF37A0093C793 /* Pusher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3CA675514DBCB2D003E2F1E /* Pusher.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A3382DF91525D0AB0025550D /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONKit.h; path = ../../Library/JSONKit.h; sourceTree = "<group>"; };
+		A3382DFB1525D0C90025550D /* PTJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PTJSON.h; path = ../../Library/PTJSON.h; sourceTree = "<group>"; };
+		A3382DFC1525D0C90025550D /* PTJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PTJSON.m; path = ../../Library/PTJSON.m; sourceTree = "<group>"; };
+		A3382DFD1525D0C90025550D /* PTJSONParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PTJSONParser.h; path = ../../Library/PTJSONParser.h; sourceTree = "<group>"; };
+		A37E160B14E4C95B00DCA3A6 /* base64.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = base64.c; path = ../../Pods/SocketRocket/SocketRocket/base64.c; sourceTree = "<group>"; };
+		A37E160C14E4C95B00DCA3A6 /* base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = base64.h; path = ../../Pods/SocketRocket/SocketRocket/base64.h; sourceTree = "<group>"; };
+		A37E160D14E4C95B00DCA3A6 /* NSData+SRB64Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+SRB64Additions.h"; path = "../../Pods/SocketRocket/SocketRocket/NSData+SRB64Additions.h"; sourceTree = "<group>"; };
+		A37E160E14E4C95C00DCA3A6 /* NSData+SRB64Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+SRB64Additions.m"; path = "../../Pods/SocketRocket/SocketRocket/NSData+SRB64Additions.m"; sourceTree = "<group>"; };
+		A37E160F14E4C95C00DCA3A6 /* SocketRocket-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "SocketRocket-Prefix.pch"; path = "../../Pods/SocketRocket/SocketRocket/SocketRocket-Prefix.pch"; sourceTree = "<group>"; };
+		A37E161014E4C95C00DCA3A6 /* SRWebSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SRWebSocket.h; path = ../../Pods/SocketRocket/SocketRocket/SRWebSocket.h; sourceTree = "<group>"; };
+		A37E161114E4C95C00DCA3A6 /* SRWebSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SRWebSocket.m; path = ../../Pods/SocketRocket/SocketRocket/SRWebSocket.m; sourceTree = "<group>"; };
+		A37E161B14E4C9CC00DCA3A6 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		A37E161F14E4CA6400DCA3A6 /* libicucore.A.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.A.dylib; path = usr/lib/libicucore.A.dylib; sourceTree = SDKROOT; };
+		A37E162114E4CBFF00DCA3A6 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
+		A37E168114E5736300DCA3A6 /* PTPusherMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PTPusherMacros.h; path = ../../Library/PTPusherMacros.h; sourceTree = "<group>"; };
+		A3CA675514DBCB2D003E2F1E /* Pusher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pusher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3CA675814DBCB2D003E2F1E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		A3CA676014DBCB2D003E2F1E /* libPusher-OSX-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "libPusher-OSX-Info.plist"; sourceTree = "<group>"; };
+		A3CA676214DBCB2D003E2F1E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A3CA676414DBCB2D003E2F1E /* libPusher-OSX-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "libPusher-OSX-Prefix.pch"; sourceTree = "<group>"; };
+		A3CA676D14DBCB94003E2F1E /* NSDictionary+QueryString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+QueryString.h"; path = "../../Library/NSDictionary+QueryString.h"; sourceTree = "<group>"; };
+		A3CA676E14DBCB94003E2F1E /* NSDictionary+QueryString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+QueryString.m"; path = "../../Library/NSDictionary+QueryString.m"; sourceTree = "<group>"; };
+		A3CA676F14DBCB94003E2F1E /* NSString+Hashing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Hashing.h"; path = "../../Library/NSString+Hashing.h"; sourceTree = "<group>"; };
+		A3CA677014DBCB94003E2F1E /* NSString+Hashing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Hashing.m"; path = "../../Library/NSString+Hashing.m"; sourceTree = "<group>"; };
+		A3CA677114DBCB94003E2F1E /* PTBlockEventListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PTBlockEventListener.h; path = ../../Library/PTBlockEventListener.h; sourceTree = "<group>"; };
+		A3CA677214DBCB94003E2F1E /* PTBlockEventListener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PTBlockEventListener.m; path = ../../Library/PTBlockEventListener.m; sourceTree = "<group>"; };
+		A3CA677314DBCB95003E2F1E /* PTEventListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PTEventListener.h; path = ../../Library/PTEventListener.h; sourceTree = "<group>"; };
+		A3CA677414DBCB95003E2F1E /* PTPusher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PTPusher.h; path = ../../Library/PTPusher.h; sourceTree = "<group>"; };
+		A3CA677514DBCB95003E2F1E /* PTPusher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PTPusher.m; path = ../../Library/PTPusher.m; sourceTree = "<group>"; };
+		A3CA677614DBCB95003E2F1E /* PTPusherAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PTPusherAPI.h; path = ../../Library/PTPusherAPI.h; sourceTree = "<group>"; };
+		A3CA677714DBCB95003E2F1E /* PTPusherAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PTPusherAPI.m; path = ../../Library/PTPusherAPI.m; sourceTree = "<group>"; };
+		A3CA677814DBCB95003E2F1E /* PTPusherChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PTPusherChannel.h; path = ../../Library/PTPusherChannel.h; sourceTree = "<group>"; };
+		A3CA677914DBCB95003E2F1E /* PTPusherChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PTPusherChannel.m; path = ../../Library/PTPusherChannel.m; sourceTree = "<group>"; };
+		A3CA677A14DBCB95003E2F1E /* PTPusherChannelAuthorizationOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PTPusherChannelAuthorizationOperation.h; path = ../../Library/PTPusherChannelAuthorizationOperation.h; sourceTree = "<group>"; };
+		A3CA677B14DBCB95003E2F1E /* PTPusherChannelAuthorizationOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PTPusherChannelAuthorizationOperation.m; path = ../../Library/PTPusherChannelAuthorizationOperation.m; sourceTree = "<group>"; };
+		A3CA677C14DBCB95003E2F1E /* PTPusherConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PTPusherConnection.h; path = ../../Library/PTPusherConnection.h; sourceTree = "<group>"; };
+		A3CA677D14DBCB95003E2F1E /* PTPusherConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PTPusherConnection.m; path = ../../Library/PTPusherConnection.m; sourceTree = "<group>"; };
+		A3CA678014DBCB95003E2F1E /* PTPusherDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PTPusherDelegate.h; path = ../../Library/PTPusherDelegate.h; sourceTree = "<group>"; };
+		A3CA678114DBCB95003E2F1E /* PTPusherErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PTPusherErrors.h; path = ../../Library/PTPusherErrors.h; sourceTree = "<group>"; };
+		A3CA678214DBCB95003E2F1E /* PTPusherEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PTPusherEvent.h; path = ../../Library/PTPusherEvent.h; sourceTree = "<group>"; };
+		A3CA678314DBCB95003E2F1E /* PTPusherEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PTPusherEvent.m; path = ../../Library/PTPusherEvent.m; sourceTree = "<group>"; };
+		A3CA678414DBCB95003E2F1E /* PTPusherEventDispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PTPusherEventDispatcher.h; path = ../../Library/PTPusherEventDispatcher.h; sourceTree = "<group>"; };
+		A3CA678514DBCB95003E2F1E /* PTPusherEventDispatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PTPusherEventDispatcher.m; path = ../../Library/PTPusherEventDispatcher.m; sourceTree = "<group>"; };
+		A3CA678614DBCB95003E2F1E /* PTPusherEventPublisher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PTPusherEventPublisher.h; path = ../../Library/PTPusherEventPublisher.h; sourceTree = "<group>"; };
+		A3CA678714DBCB95003E2F1E /* PTPusherPresenceChannelDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PTPusherPresenceChannelDelegate.h; path = ../../Library/PTPusherPresenceChannelDelegate.h; sourceTree = "<group>"; };
+		A3CA678814DBCB95003E2F1E /* PTTargetActionEventListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PTTargetActionEventListener.h; path = ../../Library/PTTargetActionEventListener.h; sourceTree = "<group>"; };
+		A3CA678914DBCB95003E2F1E /* PTTargetActionEventListener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PTTargetActionEventListener.m; path = ../../Library/PTTargetActionEventListener.m; sourceTree = "<group>"; };
+		A3CA678A14DBCB95003E2F1E /* PTURLRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PTURLRequestOperation.h; path = ../../Library/PTURLRequestOperation.h; sourceTree = "<group>"; };
+		A3CA678B14DBCB95003E2F1E /* PTURLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PTURLRequestOperation.m; path = ../../Library/PTURLRequestOperation.m; sourceTree = "<group>"; };
+		A3F203C614DEF36C0093C793 /* PusherSampleOSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PusherSampleOSX.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3F203CA14DEF36C0093C793 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		A3F203CB14DEF36C0093C793 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		A3F203CC14DEF36C0093C793 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A3F203CF14DEF36C0093C793 /* PusherSampleOSX-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PusherSampleOSX-Info.plist"; sourceTree = "<group>"; };
+		A3F203D114DEF36C0093C793 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A3F203D314DEF36C0093C793 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A3F203D514DEF36C0093C793 /* PusherSampleOSX-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PusherSampleOSX-Prefix.pch"; sourceTree = "<group>"; };
+		A3F203D714DEF36C0093C793 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		A3F203D914DEF36C0093C793 /* LRAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LRAppDelegate.h; sourceTree = "<group>"; };
+		A3F203DA14DEF36C0093C793 /* LRAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LRAppDelegate.m; sourceTree = "<group>"; };
+		A3F203DD14DEF36C0093C793 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		A3F203E514DF05410093C793 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = ../../Sample/Constants.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A3CA675114DBCB2D003E2F1E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A37E162214E4CC0000DCA3A6 /* CoreServices.framework in Frameworks */,
+				A37E162014E4CA6400DCA3A6 /* libicucore.A.dylib in Frameworks */,
+				A37E161C14E4C9CC00DCA3A6 /* Security.framework in Frameworks */,
+				A3CA675914DBCB2D003E2F1E /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A3F203C314DEF36C0093C793 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3F203E314DEF37A0093C793 /* Pusher.framework in Frameworks */,
+				A3F203C814DEF36C0093C793 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A3CA674914DBCB2D003E2F1E = {
+			isa = PBXGroup;
+			children = (
+				A3CA675E14DBCB2D003E2F1E /* libPusher-OSX */,
+				A3F203CD14DEF36C0093C793 /* PusherSampleOSX */,
+				A3CA675714DBCB2D003E2F1E /* Frameworks */,
+				A3CA675614DBCB2D003E2F1E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A3CA675614DBCB2D003E2F1E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A3CA675514DBCB2D003E2F1E /* Pusher.framework */,
+				A3F203C614DEF36C0093C793 /* PusherSampleOSX.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A3CA675714DBCB2D003E2F1E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A37E161F14E4CA6400DCA3A6 /* libicucore.A.dylib */,
+				A37E162114E4CBFF00DCA3A6 /* CoreServices.framework */,
+				A37E161B14E4C9CC00DCA3A6 /* Security.framework */,
+				A3CA675814DBCB2D003E2F1E /* Cocoa.framework */,
+				A3F203C914DEF36C0093C793 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A3CA675E14DBCB2D003E2F1E /* libPusher-OSX */ = {
+			isa = PBXGroup;
+			children = (
+				A3382DFB1525D0C90025550D /* PTJSON.h */,
+				A3382DFC1525D0C90025550D /* PTJSON.m */,
+				A3382DFD1525D0C90025550D /* PTJSONParser.h */,
+				A3382DF91525D0AB0025550D /* JSONKit.h */,
+				A37E168114E5736300DCA3A6 /* PTPusherMacros.h */,
+				A37E160B14E4C95B00DCA3A6 /* base64.c */,
+				A37E160C14E4C95B00DCA3A6 /* base64.h */,
+				A37E160D14E4C95B00DCA3A6 /* NSData+SRB64Additions.h */,
+				A37E160E14E4C95C00DCA3A6 /* NSData+SRB64Additions.m */,
+				A37E160F14E4C95C00DCA3A6 /* SocketRocket-Prefix.pch */,
+				A37E161014E4C95C00DCA3A6 /* SRWebSocket.h */,
+				A37E161114E4C95C00DCA3A6 /* SRWebSocket.m */,
+				A3CA676D14DBCB94003E2F1E /* NSDictionary+QueryString.h */,
+				A3CA676E14DBCB94003E2F1E /* NSDictionary+QueryString.m */,
+				A3CA676F14DBCB94003E2F1E /* NSString+Hashing.h */,
+				A3CA677014DBCB94003E2F1E /* NSString+Hashing.m */,
+				A3CA677114DBCB94003E2F1E /* PTBlockEventListener.h */,
+				A3CA677214DBCB94003E2F1E /* PTBlockEventListener.m */,
+				A3CA677314DBCB95003E2F1E /* PTEventListener.h */,
+				A3CA677414DBCB95003E2F1E /* PTPusher.h */,
+				A3CA677514DBCB95003E2F1E /* PTPusher.m */,
+				A3CA677614DBCB95003E2F1E /* PTPusherAPI.h */,
+				A3CA677714DBCB95003E2F1E /* PTPusherAPI.m */,
+				A3CA677814DBCB95003E2F1E /* PTPusherChannel.h */,
+				A3CA677914DBCB95003E2F1E /* PTPusherChannel.m */,
+				A3CA677A14DBCB95003E2F1E /* PTPusherChannelAuthorizationOperation.h */,
+				A3CA677B14DBCB95003E2F1E /* PTPusherChannelAuthorizationOperation.m */,
+				A3CA677C14DBCB95003E2F1E /* PTPusherConnection.h */,
+				A3CA677D14DBCB95003E2F1E /* PTPusherConnection.m */,
+				A3CA678014DBCB95003E2F1E /* PTPusherDelegate.h */,
+				A3CA678114DBCB95003E2F1E /* PTPusherErrors.h */,
+				A3CA678214DBCB95003E2F1E /* PTPusherEvent.h */,
+				A3CA678314DBCB95003E2F1E /* PTPusherEvent.m */,
+				A3CA678414DBCB95003E2F1E /* PTPusherEventDispatcher.h */,
+				A3CA678514DBCB95003E2F1E /* PTPusherEventDispatcher.m */,
+				A3CA678614DBCB95003E2F1E /* PTPusherEventPublisher.h */,
+				A3CA678714DBCB95003E2F1E /* PTPusherPresenceChannelDelegate.h */,
+				A3CA678814DBCB95003E2F1E /* PTTargetActionEventListener.h */,
+				A3CA678914DBCB95003E2F1E /* PTTargetActionEventListener.m */,
+				A3CA678A14DBCB95003E2F1E /* PTURLRequestOperation.h */,
+				A3CA678B14DBCB95003E2F1E /* PTURLRequestOperation.m */,
+				A3CA675F14DBCB2D003E2F1E /* Supporting Files */,
+			);
+			path = "libPusher-OSX";
+			sourceTree = "<group>";
+		};
+		A3CA675F14DBCB2D003E2F1E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A3CA676014DBCB2D003E2F1E /* libPusher-OSX-Info.plist */,
+				A3CA676114DBCB2D003E2F1E /* InfoPlist.strings */,
+				A3CA676414DBCB2D003E2F1E /* libPusher-OSX-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A3F203C914DEF36C0093C793 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A3F203CA14DEF36C0093C793 /* AppKit.framework */,
+				A3F203CB14DEF36C0093C793 /* CoreData.framework */,
+				A3F203CC14DEF36C0093C793 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		A3F203CD14DEF36C0093C793 /* PusherSampleOSX */ = {
+			isa = PBXGroup;
+			children = (
+				A3F203E514DF05410093C793 /* Constants.h */,
+				A3F203D914DEF36C0093C793 /* LRAppDelegate.h */,
+				A3F203DA14DEF36C0093C793 /* LRAppDelegate.m */,
+				A3F203DC14DEF36C0093C793 /* MainMenu.xib */,
+				A3F203CE14DEF36C0093C793 /* Supporting Files */,
+			);
+			path = PusherSampleOSX;
+			sourceTree = "<group>";
+		};
+		A3F203CE14DEF36C0093C793 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A3F203CF14DEF36C0093C793 /* PusherSampleOSX-Info.plist */,
+				A3F203D014DEF36C0093C793 /* InfoPlist.strings */,
+				A3F203D314DEF36C0093C793 /* main.m */,
+				A3F203D514DEF36C0093C793 /* PusherSampleOSX-Prefix.pch */,
+				A3F203D614DEF36C0093C793 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		A3CA675214DBCB2D003E2F1E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3CA678C14DBCB95003E2F1E /* NSDictionary+QueryString.h in Headers */,
+				A3CA678E14DBCB95003E2F1E /* NSString+Hashing.h in Headers */,
+				A3CA679014DBCB95003E2F1E /* PTBlockEventListener.h in Headers */,
+				A3CA679214DBCB95003E2F1E /* PTEventListener.h in Headers */,
+				A3CA679314DBCB95003E2F1E /* PTPusher.h in Headers */,
+				A3CA679514DBCB95003E2F1E /* PTPusherAPI.h in Headers */,
+				A3CA679714DBCB95003E2F1E /* PTPusherChannel.h in Headers */,
+				A3CA679914DBCB95003E2F1E /* PTPusherChannelAuthorizationOperation.h in Headers */,
+				A3CA679B14DBCB95003E2F1E /* PTPusherConnection.h in Headers */,
+				A3CA679F14DBCB95003E2F1E /* PTPusherDelegate.h in Headers */,
+				A3CA67A014DBCB95003E2F1E /* PTPusherErrors.h in Headers */,
+				A3CA67A114DBCB95003E2F1E /* PTPusherEvent.h in Headers */,
+				A3CA67A314DBCB95003E2F1E /* PTPusherEventDispatcher.h in Headers */,
+				A3CA67A514DBCB95003E2F1E /* PTPusherEventPublisher.h in Headers */,
+				A3CA67A614DBCB95003E2F1E /* PTPusherPresenceChannelDelegate.h in Headers */,
+				A3CA67A714DBCB95003E2F1E /* PTTargetActionEventListener.h in Headers */,
+				A3CA67A914DBCB95003E2F1E /* PTURLRequestOperation.h in Headers */,
+				A37E161314E4C95C00DCA3A6 /* base64.h in Headers */,
+				A37E161414E4C95C00DCA3A6 /* NSData+SRB64Additions.h in Headers */,
+				A37E161614E4C95C00DCA3A6 /* SocketRocket-Prefix.pch in Headers */,
+				A37E161714E4C95C00DCA3A6 /* SRWebSocket.h in Headers */,
+				A37E168214E5736300DCA3A6 /* PTPusherMacros.h in Headers */,
+				A3382DFA1525D0AF0025550D /* JSONKit.h in Headers */,
+				A3382DFE1525D0C90025550D /* PTJSON.h in Headers */,
+				A3382E001525D0C90025550D /* PTJSONParser.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		A3CA675414DBCB2D003E2F1E /* Pusher */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A3CA676A14DBCB2D003E2F1E /* Build configuration list for PBXNativeTarget "Pusher" */;
+			buildPhases = (
+				A3CA675014DBCB2D003E2F1E /* Sources */,
+				A3CA675114DBCB2D003E2F1E /* Frameworks */,
+				A3CA675214DBCB2D003E2F1E /* Headers */,
+				A3CA675314DBCB2D003E2F1E /* Resources */,
+				A3CA67B714DBD1CC003E2F1E /* Export Environment For xcodebuild-rb */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Pusher;
+			productName = "libPusher-OSX";
+			productReference = A3CA675514DBCB2D003E2F1E /* Pusher.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		A3F203C514DEF36C0093C793 /* PusherSampleOSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A3F203E114DEF36C0093C793 /* Build configuration list for PBXNativeTarget "PusherSampleOSX" */;
+			buildPhases = (
+				A3F203C214DEF36C0093C793 /* Sources */,
+				A3F203C314DEF36C0093C793 /* Frameworks */,
+				A3F203C414DEF36C0093C793 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PusherSampleOSX;
+			productName = PusherSampleOSX;
+			productReference = A3F203C614DEF36C0093C793 /* PusherSampleOSX.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A3CA674B14DBCB2D003E2F1E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = "LJR Software Limited";
+			};
+			buildConfigurationList = A3CA674E14DBCB2D003E2F1E /* Build configuration list for PBXProject "libPusher-OSX" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = A3CA674914DBCB2D003E2F1E;
+			productRefGroup = A3CA675614DBCB2D003E2F1E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A3CA675414DBCB2D003E2F1E /* Pusher */,
+				A3F203C514DEF36C0093C793 /* PusherSampleOSX */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A3CA675314DBCB2D003E2F1E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3CA676314DBCB2D003E2F1E /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A3F203C414DEF36C0093C793 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3F203D214DEF36C0093C793 /* InfoPlist.strings in Resources */,
+				A3F203D814DEF36C0093C793 /* Credits.rtf in Resources */,
+				A3F203DE14DEF36C0093C793 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A3CA67B714DBD1CC003E2F1E /* Export Environment For xcodebuild-rb */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Export Environment For xcodebuild-rb";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A3CA675014DBCB2D003E2F1E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3CA678D14DBCB95003E2F1E /* NSDictionary+QueryString.m in Sources */,
+				A3CA678F14DBCB95003E2F1E /* NSString+Hashing.m in Sources */,
+				A3CA679114DBCB95003E2F1E /* PTBlockEventListener.m in Sources */,
+				A3CA679414DBCB95003E2F1E /* PTPusher.m in Sources */,
+				A3CA679614DBCB95003E2F1E /* PTPusherAPI.m in Sources */,
+				A3CA679814DBCB95003E2F1E /* PTPusherChannel.m in Sources */,
+				A3CA679A14DBCB95003E2F1E /* PTPusherChannelAuthorizationOperation.m in Sources */,
+				A3CA679C14DBCB95003E2F1E /* PTPusherConnection.m in Sources */,
+				A3CA67A214DBCB95003E2F1E /* PTPusherEvent.m in Sources */,
+				A3CA67A414DBCB95003E2F1E /* PTPusherEventDispatcher.m in Sources */,
+				A3CA67A814DBCB95003E2F1E /* PTTargetActionEventListener.m in Sources */,
+				A3CA67AA14DBCB95003E2F1E /* PTURLRequestOperation.m in Sources */,
+				A37E161214E4C95C00DCA3A6 /* base64.c in Sources */,
+				A37E161514E4C95C00DCA3A6 /* NSData+SRB64Additions.m in Sources */,
+				A37E161814E4C95C00DCA3A6 /* SRWebSocket.m in Sources */,
+				A3382DFF1525D0C90025550D /* PTJSON.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A3F203C214DEF36C0093C793 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3F203D414DEF36C0093C793 /* main.m in Sources */,
+				A3F203DB14DEF36C0093C793 /* LRAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A3CA676114DBCB2D003E2F1E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A3CA676214DBCB2D003E2F1E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		A3F203D014DEF36C0093C793 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A3F203D114DEF36C0093C793 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		A3F203D614DEF36C0093C793 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A3F203D714DEF36C0093C793 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		A3F203DC14DEF36C0093C793 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A3F203DD14DEF36C0093C793 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A3CA676814DBCB2D003E2F1E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1.0;
+				DYLIB_CURRENT_VERSION = 1.1;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INSTALL_PATH = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				WARNING_CFLAGS = "-Wno-arc-performSelector-leaks";
+			};
+			name = Debug;
+		};
+		A3CA676914DBCB2D003E2F1E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_COMPATIBILITY_VERSION = 1.0;
+				DYLIB_CURRENT_VERSION = 1.1;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INSTALL_PATH = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx;
+				WARNING_CFLAGS = "-Wno-arc-performSelector-leaks";
+			};
+			name = Release;
+		};
+		A3CA676B14DBCB2D003E2F1E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "libPusher-OSX/libPusher-OSX-Prefix.pch";
+				HEADER_SEARCH_PATHS = "\"$(PROJECT_DIR)/usr/include\"";
+				INFOPLIST_FILE = "libPusher-OSX/libPusher-OSX-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		A3CA676C14DBCB2D003E2F1E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "libPusher-OSX/libPusher-OSX-Prefix.pch";
+				HEADER_SEARCH_PATHS = "\"$(PROJECT_DIR)/usr/include\"";
+				INFOPLIST_FILE = "libPusher-OSX/libPusher-OSX-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
+		A3F203DF14DEF36C0093C793 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PusherSampleOSX/PusherSampleOSX-Prefix.pch";
+				INFOPLIST_FILE = "PusherSampleOSX/PusherSampleOSX-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		A3F203E014DEF36C0093C793 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PusherSampleOSX/PusherSampleOSX-Prefix.pch";
+				INFOPLIST_FILE = "PusherSampleOSX/PusherSampleOSX-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A3CA674E14DBCB2D003E2F1E /* Build configuration list for PBXProject "libPusher-OSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A3CA676814DBCB2D003E2F1E /* Debug */,
+				A3CA676914DBCB2D003E2F1E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A3CA676A14DBCB2D003E2F1E /* Build configuration list for PBXNativeTarget "Pusher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A3CA676B14DBCB2D003E2F1E /* Debug */,
+				A3CA676C14DBCB2D003E2F1E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A3F203E114DEF36C0093C793 /* Build configuration list for PBXNativeTarget "PusherSampleOSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A3F203DF14DEF36C0093C793 /* Debug */,
+				A3F203E014DEF36C0093C793 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A3CA674B14DBCB2D003E2F1E /* Project object */;
+}

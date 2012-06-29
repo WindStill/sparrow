@@ -7,8 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PTPusher.h"
+#import "PTPusherChannel.h"
+#import "PTPusherDelegate.h"
+#import "PTPusherEvent.h"
 
 @interface ActivityTableViewController : UITableViewController
 
 @property (strong, nonatomic) NSArray *listData;
+@property (strong, nonatomic) PTPusher *client;
+@property (strong, nonatomic) PTPusherChannel *channel;
 @end

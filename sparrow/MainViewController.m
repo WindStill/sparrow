@@ -10,6 +10,7 @@
 #import "SignInViewController.h"
 
 @implementation MainViewController
+@synthesize button;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -37,16 +38,18 @@
 }
 */
 
-/*
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [button setBackgroundImage:[UIImage imageNamed:@"coverpageindicatorSel.png"] forState:UIControlStateHighlighted];
+    [button setBackgroundImage:[UIImage imageNamed:@"coverpageindicator.png"] forState:UIControlStateNormal];
+    
 }
-*/
 
 - (void)viewDidUnload
 {
+    [self setButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;

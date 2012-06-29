@@ -88,9 +88,7 @@
             NSLog([defaults stringForKey:@"authentication_token"]);
         }
         
-}
-    
-    
+    }
 //    [self performSegueWithIdentifier:@"signinsegue" sender:self];
 }
 @end
