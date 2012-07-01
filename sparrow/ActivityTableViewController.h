@@ -11,6 +11,7 @@
 #import "PTPusherChannel.h"
 #import "PTPusherDelegate.h"
 #import "PTPusherEvent.h"
+#import "QuartzCore/QuartzCore.h"
 
 @interface ActivityTableViewController : UITableViewController
 

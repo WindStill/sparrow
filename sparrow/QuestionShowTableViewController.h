@@ -11,6 +11,7 @@
 #import "Constant.h"
 #import "ASIHTTPRequest.h"
 #import "JSONKit.h"
+#import "UIImageView+WebCache.h"
 
 @interface QuestionShowTableViewController : UITableViewController
 
@@ -18,7 +19,12 @@
 @property (strong, nonatomic) NSDictionary *fullDetail;
 @property (strong, nonatomic) NSArray *answers;
 @property (strong, nonatomic) id delegate;
+@property (nonatomic) NSInteger headerViewStatus;
+@property (nonatomic) NSInteger headerViewHeight;
+//@property (strong, nonatomic) UIView *headerView;
 
 - (void)initTableViewHeader;
 - (void)requestQuestionDetail;
+- (NSString *)flattenHTML:(NSString *)html;
+- (void)tableViewHeaderTapped:(UITapGestureRecognizer *)recognizer;
 @end

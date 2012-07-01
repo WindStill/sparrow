@@ -29,10 +29,6 @@
 		041E114B159D94BC0026215B /* QuestionShowTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 041E114A159D94BC0026215B /* QuestionShowTableViewController.m */; };
 		041FB9F7159C0C6A0098A39F /* luexiao.png in Resources */ = {isa = PBXBuildFile; fileRef = 041FB9F5159C0C6A0098A39F /* luexiao.png */; };
 		041FB9F8159C0C6A0098A39F /* luexiao@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 041FB9F6159C0C6A0098A39F /* luexiao@2x.png */; };
-		041FB9FE159C0EDB0098A39F /* coverpageindicator.png in Resources */ = {isa = PBXBuildFile; fileRef = 041FB9FA159C0EDB0098A39F /* coverpageindicator.png */; };
-		041FB9FF159C0EDB0098A39F /* coverpageindicator@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 041FB9FB159C0EDB0098A39F /* coverpageindicator@2x.png */; };
-		041FBA00159C0EDB0098A39F /* coverpageindicatorSel.png in Resources */ = {isa = PBXBuildFile; fileRef = 041FB9FC159C0EDB0098A39F /* coverpageindicatorSel.png */; };
-		041FBA01159C0EDB0098A39F /* coverpageindicatorSel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 041FB9FD159C0EDB0098A39F /* coverpageindicatorSel@2x.png */; };
 		041FBA03159C20320098A39F /* input_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 041FBA02159C20320098A39F /* input_background.png */; };
 		041FBA10159C37F30098A39F /* QuestionCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 041FBA0F159C37F30098A39F /* QuestionCreateViewController.m */; };
 		042ED02115988593001F285B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 042ED02015988593001F285B /* QuartzCore.framework */; };
@@ -61,6 +57,14 @@
 		751E4C381577B59F007BFDD5 /* UserTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 751E4C371577B59F007BFDD5 /* UserTableViewController.m */; };
 		751E4C3C1577BE58007BFDD5 /* cog_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 751E4C3A1577BE58007BFDD5 /* cog_icon.png */; };
 		751E4C3D1577BE58007BFDD5 /* cog_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 751E4C3B1577BE58007BFDD5 /* cog_icon@2x.png */; };
+		7555D45815A0719C00897FD2 /* badge-yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = 7555D45615A0719C00897FD2 /* badge-yellow.png */; };
+		7555D45915A0719C00897FD2 /* badge-yellow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7555D45715A0719C00897FD2 /* badge-yellow@2x.png */; };
+		7555D45D15A0742800897FD2 /* badge-red.png in Resources */ = {isa = PBXBuildFile; fileRef = 7555D45B15A0742800897FD2 /* badge-red.png */; };
+		7555D45E15A0742800897FD2 /* badge-red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7555D45C15A0742800897FD2 /* badge-red@2x.png */; };
+		75CA7241159F35FD00F9FBE9 /* coverpageindicator.png in Resources */ = {isa = PBXBuildFile; fileRef = 75CA723D159F35FD00F9FBE9 /* coverpageindicator.png */; };
+		75CA7242159F35FD00F9FBE9 /* coverpageindicator@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75CA723E159F35FD00F9FBE9 /* coverpageindicator@2x.png */; };
+		75CA7243159F35FD00F9FBE9 /* coverpageindicatorSel.png in Resources */ = {isa = PBXBuildFile; fileRef = 75CA723F159F35FD00F9FBE9 /* coverpageindicatorSel.png */; };
+		75CA7244159F35FD00F9FBE9 /* coverpageindicatorSel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75CA7240159F35FD00F9FBE9 /* coverpageindicatorSel@2x.png */; };
 		8130E9F7AE514DFBB2AE7143 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8FAB3535DA4D26928B43D5 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -89,10 +93,6 @@
 		041E114A159D94BC0026215B /* QuestionShowTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionShowTableViewController.m; sourceTree = "<group>"; };
 		041FB9F5159C0C6A0098A39F /* luexiao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = luexiao.png; sourceTree = "<group>"; };
 		041FB9F6159C0C6A0098A39F /* luexiao@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "luexiao@2x.png"; sourceTree = "<group>"; };
-		041FB9FA159C0EDB0098A39F /* coverpageindicator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = coverpageindicator.png; path = ../../../Desktop/coverpageindicator.png; sourceTree = "<group>"; };
-		041FB9FB159C0EDB0098A39F /* coverpageindicator@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "coverpageindicator@2x.png"; path = "../../../Desktop/coverpageindicator@2x.png"; sourceTree = "<group>"; };
-		041FB9FC159C0EDB0098A39F /* coverpageindicatorSel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = coverpageindicatorSel.png; path = ../../../Desktop/coverpageindicatorSel.png; sourceTree = "<group>"; };
-		041FB9FD159C0EDB0098A39F /* coverpageindicatorSel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "coverpageindicatorSel@2x.png"; path = "../../../Desktop/coverpageindicatorSel@2x.png"; sourceTree = "<group>"; };
 		041FBA02159C20320098A39F /* input_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = input_background.png; sourceTree = "<group>"; };
 		041FBA0E159C37F20098A39F /* QuestionCreateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionCreateViewController.h; sourceTree = "<group>"; };
 		041FBA0F159C37F30098A39F /* QuestionCreateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionCreateViewController.m; sourceTree = "<group>"; };
@@ -133,6 +133,14 @@
 		751E4C371577B59F007BFDD5 /* UserTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTableViewController.m; sourceTree = "<group>"; };
 		751E4C3A1577BE58007BFDD5 /* cog_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cog_icon.png; sourceTree = "<group>"; };
 		751E4C3B1577BE58007BFDD5 /* cog_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cog_icon@2x.png"; sourceTree = "<group>"; };
+		7555D45615A0719C00897FD2 /* badge-yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "badge-yellow.png"; sourceTree = "<group>"; };
+		7555D45715A0719C00897FD2 /* badge-yellow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "badge-yellow@2x.png"; sourceTree = "<group>"; };
+		7555D45B15A0742800897FD2 /* badge-red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "badge-red.png"; sourceTree = "<group>"; };
+		7555D45C15A0742800897FD2 /* badge-red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "badge-red@2x.png"; sourceTree = "<group>"; };
+		75CA723D159F35FD00F9FBE9 /* coverpageindicator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coverpageindicator.png; sourceTree = "<group>"; };
+		75CA723E159F35FD00F9FBE9 /* coverpageindicator@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coverpageindicator@2x.png"; sourceTree = "<group>"; };
+		75CA723F159F35FD00F9FBE9 /* coverpageindicatorSel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coverpageindicatorSel.png; sourceTree = "<group>"; };
+		75CA7240159F35FD00F9FBE9 /* coverpageindicatorSel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coverpageindicatorSel@2x.png"; sourceTree = "<group>"; };
 		BD8FAB3535DA4D26928B43D5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -159,12 +167,16 @@
 		0466051615709BCB00E88233 /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				7555D45B15A0742800897FD2 /* badge-red.png */,
+				7555D45C15A0742800897FD2 /* badge-red@2x.png */,
+				7555D45615A0719C00897FD2 /* badge-yellow.png */,
+				7555D45715A0719C00897FD2 /* badge-yellow@2x.png */,
 				041FB9F5159C0C6A0098A39F /* luexiao.png */,
-				041FB9FA159C0EDB0098A39F /* coverpageindicator.png */,
-				041FB9FB159C0EDB0098A39F /* coverpageindicator@2x.png */,
-				041FB9FC159C0EDB0098A39F /* coverpageindicatorSel.png */,
 				041FBA02159C20320098A39F /* input_background.png */,
-				041FB9FD159C0EDB0098A39F /* coverpageindicatorSel@2x.png */,
+				75CA723D159F35FD00F9FBE9 /* coverpageindicator.png */,
+				75CA723E159F35FD00F9FBE9 /* coverpageindicator@2x.png */,
+				75CA723F159F35FD00F9FBE9 /* coverpageindicatorSel.png */,
+				75CA7240159F35FD00F9FBE9 /* coverpageindicatorSel@2x.png */,
 				041FB9F6159C0C6A0098A39F /* luexiao@2x.png */,
 				751E4C3A1577BE58007BFDD5 /* cog_icon.png */,
 				751E4C3B1577BE58007BFDD5 /* cog_icon@2x.png */,
@@ -237,13 +249,13 @@
 			children = (
 				04C2061F156F302400B31E3F /* AppDelegate.h */,
 				04C20620156F302400B31E3F /* AppDelegate.m */,
+				04C20622156F302400B31E3F /* MainStoryboard.storyboard */,
 				041E1149159D94BC0026215B /* QuestionShowTableViewController.h */,
 				041E114A159D94BC0026215B /* QuestionShowTableViewController.m */,
 				041FBA0E159C37F20098A39F /* QuestionCreateViewController.h */,
 				041FBA0F159C37F30098A39F /* QuestionCreateViewController.m */,
 				04395CB515834EA500A8B488 /* SearchViewController.h */,
 				04395CB615834EA600A8B488 /* SearchViewController.m */,
-				04C20622156F302400B31E3F /* MainStoryboard.storyboard */,
 				04395CA115830BF400A8B488 /* UserShowViewController.h */,
 				04395CA215830BF400A8B488 /* UserShowViewController.m */,
 				751E4C361577B59F007BFDD5 /* UserTableViewController.h */,
@@ -353,11 +365,15 @@
 				04877EF6159AB3CD006DD1D4 /* loginLogo.png in Resources */,
 				041FB9F7159C0C6A0098A39F /* luexiao.png in Resources */,
 				041FB9F8159C0C6A0098A39F /* luexiao@2x.png in Resources */,
-				041FB9FE159C0EDB0098A39F /* coverpageindicator.png in Resources */,
-				041FB9FF159C0EDB0098A39F /* coverpageindicator@2x.png in Resources */,
-				041FBA00159C0EDB0098A39F /* coverpageindicatorSel.png in Resources */,
-				041FBA01159C0EDB0098A39F /* coverpageindicatorSel@2x.png in Resources */,
 				041FBA03159C20320098A39F /* input_background.png in Resources */,
+				75CA7241159F35FD00F9FBE9 /* coverpageindicator.png in Resources */,
+				75CA7242159F35FD00F9FBE9 /* coverpageindicator@2x.png in Resources */,
+				75CA7243159F35FD00F9FBE9 /* coverpageindicatorSel.png in Resources */,
+				75CA7244159F35FD00F9FBE9 /* coverpageindicatorSel@2x.png in Resources */,
+				7555D45815A0719C00897FD2 /* badge-yellow.png in Resources */,
+				7555D45915A0719C00897FD2 /* badge-yellow@2x.png in Resources */,
+				7555D45D15A0742800897FD2 /* badge-red.png in Resources */,
+				7555D45E15A0742800897FD2 /* badge-red@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="11A511" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="vNL-2D-LbF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="vNL-2D-LbF">
     <dependencies>
+        <deployment defaultVersion="1296" identifier="iOS"/>
         <development defaultVersion="4200" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="933"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
     </dependencies>
     <scenes>
+        <!--Main View Controller-->
         <scene sceneID="2gb-zx-4ET">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bl0-BT-IvY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -43,6 +45,7 @@
             </objects>
             <point key="canvasLocation" x="-1547" y="136"/>
         </scene>
+        <!--Sign In View Controller-->
         <scene sceneID="5">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
@@ -94,6 +97,7 @@
             </objects>
             <point key="canvasLocation" x="-1144" y="136"/>
         </scene>
+        <!--Navigation Controller - 提问-->
         <scene sceneID="g8k-f9-VEl">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n9V-ct-C5v" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -110,6 +114,7 @@
             </objects>
             <point key="canvasLocation" x="-187" y="794"/>
         </scene>
+        <!--Question Create View Controller - 提问-->
         <scene sceneID="eRK-dz-nQD">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bYK-Ex-aEj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -117,26 +122,15 @@
                     <view key="view" contentMode="scaleToFill" id="O8c-wd-gZF">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" minimumFontSize="10" id="HHv-eJ-2eM">
-                                <rect key="frame" x="133" y="164" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="提问" id="uhs-in-QKK"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="notifyNum" destination="HHv-eJ-2eM" id="mnG-Mp-d2W"/>
-                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="282" y="794"/>
         </scene>
+        <!--Navigation Controller - 搜索-->
         <scene sceneID="cpD-6U-jBS">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S6E-2J-QZa" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -153,6 +147,7 @@
             </objects>
             <point key="canvasLocation" x="-187" y="129"/>
         </scene>
+        <!--View Controller - 搜索-->
         <scene sceneID="YTV-0N-aRz">
             <objects>
                 <searchDisplayController id="U8L-4S-fR4">
@@ -196,6 +191,7 @@
             </objects>
             <point key="canvasLocation" x="298" y="129"/>
         </scene>
+        <!--Table View Controller-->
         <scene sceneID="UlJ-3Z-1lq">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C4x-3m-s5z" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -224,6 +220,7 @@
             </objects>
             <point key="canvasLocation" x="701" y="129"/>
         </scene>
+        <!--Navigation Controller - 我-->
         <scene sceneID="dll-vo-EEA">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2qm-sq-yGC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -240,6 +237,7 @@
             </objects>
             <point key="canvasLocation" x="-187" y="1415"/>
         </scene>
+        <!--User Table View Controller - 我的略晓-->
         <scene sceneID="3dn-1a-X07">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jIn-ST-L6d" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -269,6 +267,7 @@
             </objects>
             <point key="canvasLocation" x="239" y="1415"/>
         </scene>
+        <!--User Table View Controller - 我的略晓-->
         <scene sceneID="q3z-pE-qUO">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bUB-rk-U2W" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -409,6 +408,7 @@
             </objects>
             <point key="canvasLocation" x="628" y="1415"/>
         </scene>
+        <!--User Show View Controller-->
         <scene sceneID="2Qf-w1-hcV">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rwV-90-lPH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -531,6 +531,7 @@
             </objects>
             <point key="canvasLocation" x="968" y="1415"/>
         </scene>
+        <!--Navigation Controller - 频道-->
         <scene sceneID="oxB-p3-LIX">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zUR-Cq-kd0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -547,6 +548,7 @@
             </objects>
             <point key="canvasLocation" x="-187" y="-507"/>
         </scene>
+        <!--Table View Controller-->
         <scene sceneID="W9B-JO-oNB">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UUw-1O-7w7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -585,6 +587,7 @@
             </objects>
             <point key="canvasLocation" x="282" y="-507"/>
         </scene>
+        <!--Activity Table View Controller - 动态-->
         <scene sceneID="SYv-ei-OgB">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cYo-x5-YVf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -594,15 +597,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="activity_cell" rowHeight="71" id="DzD-yJ-jBz">
-                                <rect key="frame" x="0.0" y="22" width="320" height="71"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="activity_cell" rowHeight="70" id="DzD-yJ-jBz">
+                                <rect key="frame" x="0.0" y="22" width="320" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="300" height="70"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="69"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" id="ZUh-BC-USr">
-                                            <rect key="frame" x="20" y="9" width="35" height="37"/>
+                                            <rect key="frame" x="20" y="10" width="35" height="35"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" text="三大发达省份的身份的方式的方式地方" lineBreakMode="tailTruncation" numberOfLines="2" minimumFontSize="10" id="oZT-ZV-QOg">
@@ -638,6 +641,7 @@
             </objects>
             <point key="canvasLocation" x="282" y="-1195"/>
         </scene>
+        <!--Question Show Table View Controller-->
         <scene sceneID="rme-77-yCT">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0UW-ez-tck" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -647,12 +651,39 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="eIV-mB-CnK">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="70" id="eIV-mB-CnK">
+                                <rect key="frame" x="0.0" y="22" width="320" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" id="HZ8-Rb-Top">
+                                            <rect key="frame" x="20" y="10" width="35" height="35"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="TQ2-k0-hZn">
+                                            <rect key="frame" x="20" y="47" width="35" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="left" text="李园" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="5zh-rg-XKx">
+                                            <rect key="frame" x="63" y="8" width="237" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="4" contentMode="left" text="来看看什么是投资？ 维基百科的定义： 投资指投入资金到有经济价值的对象上，以期保值和增值的一种经济活动。在经济和金融领域，投资有不同的活动种类。相较于投机，投资涉及" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" id="NYa-H9-rzi">
+                                            <rect key="frame" x="63" y="29" width="237" height="37"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                             </tableViewCell>
@@ -667,6 +698,7 @@
             </objects>
             <point key="canvasLocation" x="715" y="-1195"/>
         </scene>
+        <!--View Controller-->
         <scene sceneID="KWB-58-Dqq">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bje-YE-cws" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -676,7 +708,26 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" minimumFontSize="13" id="srs-Wu-Svr">
-                                <rect key="frame" x="20" y="20" width="280" height="29"/>
+                                <rect key="frame" x="88" y="20" width="212" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="badge-yellow.png" id="Jge-iM-xRC">
+                                <rect key="frame" x="20" y="20" width="60" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="7元" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="Ug5-tp-2cG">
+                                <rect key="frame" x="28" y="28" width="44" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="5回答" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="04T-xf-jOb">
+                                <rect key="frame" x="24" y="60" width="52" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -689,6 +740,7 @@
             </objects>
             <point key="canvasLocation" x="1088" y="-1195"/>
         </scene>
+        <!--Tab Bar Controller-->
         <scene sceneID="St8-dI-O6C">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y9d-iW-e4o" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -711,6 +763,7 @@
             </objects>
             <point key="canvasLocation" x="-712" y="136"/>
         </scene>
+        <!--Navigation Controller - 动态-->
         <scene sceneID="vhE-sb-lNL">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e0H-cJ-3OJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -729,6 +782,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="badge-yellow.png" width="65" height="65"/>
         <image name="cog_icon.png" width="24" height="24"/>
         <image name="doc_edit.png" width="24" height="24"/>
         <image name="input_background.png" width="260" height="90"/>
@@ -738,46 +792,6 @@
         <image name="user.png" width="24" height="24"/>
         <image name="zoom.png" width="24" height="24"/>
     </resources>
-    <classes>
-        <class className="ActivityTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ActivityTableViewController.h"/>
-        </class>
-        <class className="MainViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="buttonPressed:"/>
-                <relationship kind="outlet" name="button" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="QuestionCreateViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/QuestionCreateViewController.h"/>
-        </class>
-        <class className="QuestionShowTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/QuestionShowTableViewController.h"/>
-        </class>
-        <class className="SignInViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SignInViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="signInButtonPressed:"/>
-                <relationship kind="outlet" name="password" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="username" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="UserShowViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UserShowViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="bio" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="channelsCount" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="followerCount" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="followingCount" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="nickname" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="userAvatar" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="UserTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UserTableViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

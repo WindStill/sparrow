@@ -51,12 +51,7 @@
 //        NSLog(@"row: %lu", (unsigned long)[listData count]);
     }
     
-    client = [PTPusher pusherWithKey:@"bbfde76f47dd4fabff88" connectAutomatically:YES encrypted:NO];
-    [client connect];
-    channel = [client subscribeToChannelNamed:@"notify_293"];
-    [channel bindToEventNamed:@"message_created" handleWithBlock:^(PTPusherEvent *channelEvent) {
-        NSLog(@"新私信%@", channelEvent.data);
-    }];
+    
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -165,6 +160,11 @@
     
     [imageView setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", PREFIX_URL, avatar_url]]
                     placeholderImage:[UIImage imageNamed:@"111-user.png"]];  
+    imageView.layer.borderWidth = 1;
+    imageView.layer.masksToBounds = YES;
+    imageView.layer.cornerRadius = 3;
+    imageView.layer.borderColor = [[UIColor lightGrayColor]CGColor];
+
     UILabel *titleLabel = (UILabel *)[cell viewWithTag:2];
     titleLabel.text = title;
     UILabel *actionLabel = (UILabel *)[cell viewWithTag:3];
