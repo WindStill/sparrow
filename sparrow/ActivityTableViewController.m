@@ -51,7 +51,10 @@
 //        NSLog(@"row: %lu", (unsigned long)[listData count]);
     }
     
-    
+//    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"stack(.*).html" options:0 error:NULL];
+//    NSString *html = @"<span><a href=\"stackoverflow.html\">stackoverflow.html</a></span>";
+//    NSTextCheckingResult *match = [regex firstMatchInString:html options:0 range:NSMakeRange(0, [html length])];
+//    NSLog([html substringWithRange:[match rangeAtIndex:1]]);
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;

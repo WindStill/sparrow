@@ -42,10 +42,9 @@
     [super viewDidLoad];
     headerViewStatus = 0;
     
+    self.navigationItem.title = [NSString stringWithFormat:@"%@ 个回答", [sampleDetail objectForKey:@"answers_count"]];
     [self initTableViewHeader];
     [self requestQuestionDetail];
-//    NSString *title = [NSString stringWithFormat:@"%@", answers.count];
-//    self.navigationItem.title = title;
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -143,6 +142,19 @@
     return cell;
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    UIViewController *destination = segue.destinationViewController;
+    if ([destination respondsToSelector:@selector(setDelegate:)]) {
+        [destination setValue:self forKey:@"delegate"];
+    }
+    if ([destination respondsToSelector:@selector(setAnswer:)]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+        NSDictionary *answer = (NSDictionary *)[answers objectAtIndex:indexPath.row];
+        [destination setValue:answer forKey:@"answer"];
+    }
+}
+
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -195,16 +207,12 @@
      */
 }
 
-- (void)initTableViewHeader
+- (void)initTableViewHeader:(UIView *)headerView
 {
-    NSString *title = [sampleDetail objectForKey:@"title"];
-    UIView *headerView = [[UIView alloc] initWithFrame:CGRectZero];
-//    UIView *headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 320, 100)];
-    
-    NSInteger bounty = [sampleDetail objectForKey:@"bounties"];
+    NSNumber *bounty = [sampleDetail objectForKey:@"bounties"];
     UIImageView *bountyImageView = nil;
-    if (bounty > 0) {
-        bountyImageView = [[UIImageView alloc]initWithFrame:CGRectMake(20, 20, 60, 60)];
+    if ([bounty integerValue] > 0) {
+        bountyImageView = [[UIImageView alloc]initWithFrame:CGRectMake(10, 10, 60, 60)];
         bountyImageView.image = [UIImage imageNamed:@"badge-yellow.png"];
         
         UILabel *bountyLabel = [[UILabel alloc]initWithFrame:CGRectMake(8, 8, 44, 20)];
@@ -218,45 +226,57 @@
         UILabel *answerCountLabel = [[UILabel alloc]initWithFrame:CGRectMake(4, 35, 52, 20)];
         answerCountLabel.textAlignment = UITextAlignmentCenter;
         answerCountLabel.backgroundColor = [UIColor clearColor];
-        answerCountLabel.font = [UIFont systemFontOfSize:15];
+        answerCountLabel.textColor = [UIColor darkGrayColor];
+        answerCountLabel.font = [UIFont systemFontOfSize:13];
         NSInteger answersCount = [sampleDetail objectForKey:@"answers_count"];
         answerCountLabel.text = [NSString stringWithFormat:@"%@ 回答", answersCount];
         [bountyImageView addSubview:answerCountLabel];
         
         [headerView addSubview:bountyImageView];
     } else {
-        bountyImageView = [[UIImageView alloc]initWithFrame:CGRectMake(20, 20, 60, 60)];
-        bountyImageView.image = [UIImage imageNamed:@"badge-red.png"];
+        bountyImageView = [[UIImageView alloc]initWithFrame:CGRectMake(10, 10, 60, 60)];
+        bountyImageView.image = [UIImage imageNamed:@"badge-grey.png"];
         
         UILabel *answersCountLabel = [[UILabel alloc]initWithFrame:CGRectMake(8, 8, 44, 25)];
         answersCountLabel.textAlignment = UITextAlignmentCenter;
+        answersCountLabel.backgroundColor = [UIColor clearColor];
         NSInteger answersCount = [sampleDetail objectForKey:@"answers_count"];
         answersCountLabel.text = [NSString stringWithFormat:@"%@", answersCount];
         [bountyImageView addSubview:answersCountLabel];
-
+        
         UILabel *typeLabel = [[UILabel alloc]initWithFrame:CGRectMake(4, 35, 52, 21)];
         typeLabel.textAlignment = UITextAlignmentCenter;
+        typeLabel.backgroundColor = [UIColor clearColor];
+        typeLabel.font = [UIFont systemFontOfSize:15];
         typeLabel.text = @"回答";
         [bountyImageView addSubview:typeLabel];
         
         [headerView addSubview:bountyImageView];    
     }
+    headerViewHeight = bountyImageView.image.size.height + 20;
+}
+
+- (void)initTableViewHeader
+{
+    NSString *title = [sampleDetail objectForKey:@"title"];
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectZero];
+//    UIView *headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 320, 100)];
+    
+    [self initTableViewHeader:headerView];
         
     UILabel *titleLable = [[UILabel alloc] initWithFrame:CGRectZero];
     titleLable.numberOfLines = 5;
     titleLable.font = [UIFont systemFontOfSize:15];
     titleLable.backgroundColor = [UIColor clearColor];
-    CGSize constraint = CGSizeMake(212, 20000.0f);
+    CGSize constraint = CGSizeMake(232, 20000.0f);
     CGSize size = [title sizeWithFont:[UIFont systemFontOfSize:15] constrainedToSize:constraint lineBreakMode:UILineBreakModeWordWrap];
-    [titleLable setFrame:CGRectMake(88, 20, 212, size.height)];
+    [titleLable setFrame:CGRectMake(78, 10, 232, size.height)];
     
     titleLable.text = title;
     
     [headerView addSubview:titleLable];
-    if (size.height > bountyImageView.image.size.height) {
-        headerViewHeight = size.height+40;
-    }else {
-        headerViewHeight = bountyImageView.image.size.height + 40;
+    if (size.height > headerViewHeight) {
+        headerViewHeight = size.height+20;
     }
     headerView.frame = CGRectMake(0, 0, 320, headerViewHeight);
     headerView.backgroundColor = [UIColor lightGrayColor];

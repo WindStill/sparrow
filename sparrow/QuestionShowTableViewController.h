@@ -24,7 +24,9 @@
 //@property (strong, nonatomic) UIView *headerView;
 
 - (void)initTableViewHeader;
+- (void)initTableViewHeader:(UIView *)headerView;
 - (void)requestQuestionDetail;
 - (NSString *)flattenHTML:(NSString *)html;
 - (void)tableViewHeaderTapped:(UITapGestureRecognizer *)recognizer;
+- (void)tableViewCellTapped:(UITapGestureRecognizer *)recognizer;
 @end

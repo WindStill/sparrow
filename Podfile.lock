@@ -1,6 +1,16 @@
 PODS:
   - ASIHTTPRequest (1.8.1):
+    - ASIHTTPRequest/ASIWebPageRequest (= 1.8.1)
+    - ASIHTTPRequest/CloudFiles (= 1.8.1)
+    - ASIHTTPRequest/S3 (= 1.8.1)
     - Reachability
+  - ASIHTTPRequest/ASIWebPageRequest (1.8.1):
+    - Reachability
+  - ASIHTTPRequest/CloudFiles (1.8.1):
+    - Reachability
+  - ASIHTTPRequest/S3 (1.8.1):
+    - Reachability
+  - DTCoreText (1.0.1)
   - JSONKit (1.5pre)
   - Reachability (3.0.0)
   - SDWebImage (2.6)
@@ -10,6 +20,7 @@ PODS:
 
 DEPENDENCIES:
   - ASIHTTPRequest
+  - DTCoreText
   - JSONKit (~> 1.4)
   - Reachability (~> 3.0.0)
   - SDWebImage

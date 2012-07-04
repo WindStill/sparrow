@@ -1,4 +1,4 @@
-PODS_ROOT = $(SRCROOT)/Pods
-HEADER_SEARCH_PATHS = "$(PODS_ROOT)/Headers" "$(PODS_ROOT)/Headers/ASIHTTPRequest" "$(PODS_ROOT)/Headers/JSONKit" "$(PODS_ROOT)/Headers/Reachability" "$(PODS_ROOT)/Headers/SDWebImage" "$(PODS_ROOT)/Headers/SocketRocket" "$(PODS_ROOT)/Headers/libPusher"
+PODS_ROOT = ${SRCROOT}/Pods
 ALWAYS_SEARCH_USER_PATHS = YES
-OTHER_LDFLAGS = -ObjC -all_load -framework MobileCoreServices -framework CFNetwork -framework CoreGraphics -lz.1 -framework SystemConfiguration -framework CFNetwork -framework Security -licucore
+OTHER_LDFLAGS = -ObjC -licucore -lxml2 -lxml2.2.7.3 -lz.1 -framework CFNetwork -framework CoreGraphics -framework CoreText -framework ImageIO -framework MediaPlayer -framework MobileCoreServices -framework QuartzCore -framework Security -framework SystemConfiguration
+HEADER_SEARCH_PATHS = $(SDKROOT)/usr/include/libxml2 "$(SDKROOT)/usr/include/libxml2" "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/ASIHTTPRequest" "${PODS_ROOT}/Headers/DTCoreText" "${PODS_ROOT}/Headers/JSONKit" "${PODS_ROOT}/Headers/Reachability" "${PODS_ROOT}/Headers/SDWebImage" "${PODS_ROOT}/Headers/SocketRocket" "${PODS_ROOT}/Headers/libPusher"

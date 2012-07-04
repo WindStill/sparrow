@@ -18,7 +18,7 @@
 
 @interface PTPusherEventBinding : NSObject <PTEventListener>
 
-@property (nonatomic, readonly) NSString *eventName;
+@property (nonatomic, strong) NSString *eventName;
 
 - (id)initWithEventListener:(id<PTEventListener>)eventListener eventName:(NSString *)eventName;
 @end
