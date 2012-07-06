@@ -12,9 +12,7 @@
 #import "ASIHTTPRequest.h"
 #import "JSONKit.h"
 #import "UIImageView+WebCache.h"
-#import "DTAttributedTextView.h"
 #import <MediaPlayer/MediaPlayer.h>
-#import "DTLazyImageView.h"
 
 @interface QuestionShowTableViewController : UITableViewController<DTAttributedTextContentViewDelegate, DTLazyImageViewDelegate>
 

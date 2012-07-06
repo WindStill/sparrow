@@ -18,6 +18,12 @@
 }
 @property (strong, nonatomic) NSDictionary *answer;
 @property (strong, nonatomic) NSURL *baseURL;
+@property (strong, nonatomic) NSMutableSet *mediaPlayers;
+@property (nonatomic, strong) NSURL *lastActionLink;
 
 - (void)compliedViewTapped:(UITapGestureRecognizer *)recognizer;
+
+- (void)linkPushed:(DTLinkButton *)button;
+- (void)linkLongPressed:(UILongPressGestureRecognizer *)gesture;
+- (void)debugButton:(UIBarButtonItem *)sender;
 @end

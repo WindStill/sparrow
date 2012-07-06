@@ -7,13 +7,6 @@
 //
 
 #import "QuestionShowTableViewController.h"
-#import "DTHTMLElement.h"
-#import "DTCoreTextFontDescriptor.h"
-#import "DTCoreTextConstants.h"
-#import "DTCoreTextConstants.h"
-#import "DTLinkButton.h"
-#import "DTWebVideoView.h"
-#import "DTColor+HTML.h"
 
 @implementation QuestionShowTableViewController
 @synthesize sampleDetail;
@@ -127,7 +120,7 @@
     NSDictionary *user = [answer objectForKey:@"user"];
     NSString *name = [user objectForKey:@"name"];
     NSString *avatar_url = [user objectForKey:@"avatar_url"];
-    NSString *markdown = [answer objectForKey:@"markdown"];
+    NSString *compiled = [answer objectForKey:@"compiled"];
     NSInteger voteCount = [answer objectForKey:@"votes_count"];
     
     UIImageView *imageView = (UIImageView *)[cell viewWithTag:1];
@@ -142,7 +135,7 @@
     nameLabel.text = name;
     
     UILabel *contentLabel = (UILabel *)[cell viewWithTag:4];
-    contentLabel.text = [self flattenHTML:markdown];
+    contentLabel.text = [self flattenHTML:compiled];
     
     UILabel *voteLabel = (UILabel *)[cell viewWithTag:2];
     voteLabel.text = [NSString stringWithFormat:@"%@", voteCount];
@@ -291,7 +284,8 @@
     nameLabel.text = [NSString stringWithFormat:@"%@", [user objectForKey:@"name"]];
     [userView addSubview:nameLabel];
     UILabel *dateLabel = [[UILabel alloc]initWithFrame:CGRectMake(157, 0, 75, 20)];
-    dateLabel.font = [UIFont systemFontOfSize:13];
+    dateLabel.font = [UIFont systemFontOfSize:12];
+    dateLabel.textColor = [UIColor darkGrayColor];
     dateLabel.text = [[sampleDetail objectForKey:@"created_at"]substringToIndex:10];
     [userView addSubview:dateLabel];
     [headerView addSubview:userView];
@@ -347,8 +341,8 @@
         html = [html stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"%@>", text] withString:@""];
     }
     
-    NSArray *entities = [[NSArray alloc] initWithObjects:@"&nbsp;",@"&lt;",@"&gt;",@"&amp;",@"&quot;",@"&apos;",nil];
-    NSArray *plainText = [[NSArray alloc] initWithObjects:@" ",@"<",@">",@"&",@"\"",@"\'",nil];
+    NSArray *entities = [[NSArray alloc] initWithObjects:@"&nbsp;",@"&lt;",@"&gt;",@"&amp;",@"&quot;",@"&apos;",@"\n",nil];
+    NSArray *plainText = [[NSArray alloc] initWithObjects:@" ",@"<",@">",@"&",@"\"",@"\'",@" ",nil];
     
     for (NSInteger i=0; i<entities.count; i++) {
         html = [html stringByReplacingOccurrencesOfString:[entities objectAtIndex:i] withString:[plainText objectAtIndex:i]];
@@ -358,39 +352,41 @@
 
 - (void)buildCompliedViewInTableViewHeader
 {
-//    CGRect frame = CGRectMake(0.0, headerViewHeight, self.view.frame.size.width, self.view.frame.size.height);
-    [DTAttributedTextContentView setLayerClass:[CATiledLayer class]];
-	compliedView = [[DTAttributedTextView alloc] initWithFrame:CGRectMake(0.0, headerViewHeight, self.view.frame.size.width, self.view.frame.size.height)];
-	compliedView.textDelegate = self;
-	compliedView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-	[headerView addSubview:compliedView];
-    
     NSString *html = [fullDetail objectForKey:@"compiled"];
-	NSData *data = [html dataUsingEncoding:NSUTF8StringEncoding];
-    
-    // Create attributed string from HTML
-	CGSize maxImageSize = CGSizeMake(self.view.bounds.size.width - 20.0, self.view.bounds.size.height - 20.0);
-	
-	// example for setting a willFlushCallback, that gets called before elements are written to the generated attributed string
-	void (^callBackBlock)(DTHTMLElement *element) = ^(DTHTMLElement *element) {
-		// if an element is larger than twice the font size put it in it's own block
-		if (element.displayStyle == DTHTMLElementDisplayStyleInline && element.textAttachment.displaySize.height > 2.0 * element.fontDescriptor.pointSize)
-		{
-			element.displayStyle = DTHTMLElementDisplayStyleBlock;
-		}
-	};
-    
-	
-	NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithFloat:1.0], NSTextSizeMultiplierDocumentOption, [NSValue valueWithCGSize:maxImageSize], DTMaxImageSize,
-                             @"Helvetica", DTDefaultFontFamily,  @"purple", DTDefaultLinkColor, nil, NSBaseURLDocumentOption, callBackBlock, DTWillFlushBlockCallBack, nil]; 
-	NSAttributedString *string = [[NSAttributedString alloc] initWithHTML:data options:options documentAttributes:NULL];
-	
-	// Display string
-	compliedView.contentView.edgeInsets = UIEdgeInsetsMake(10, 10, 10, 10);
-	compliedView.attributedString = string;
-    [compliedView setFrame:CGRectMake(0, headerViewHeight, self.view.frame.size.width, compliedView.contentSize.height)];
-    compliedView.hidden = YES;
-    [headerView addSubview:compliedView];
+    if (html != nil && html != @"") {
+        CGRect frame = CGRectMake(0.0, headerViewHeight-10, self.view.frame.size.width, self.view.frame.size.height);
+        [DTAttributedTextContentView setLayerClass:[CATiledLayer class]];
+        compliedView = [[DTAttributedTextView alloc] initWithFrame:frame];
+        compliedView.textDelegate = self;
+        compliedView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+        [headerView addSubview:compliedView];
+        
+        NSData *data = [html dataUsingEncoding:NSUTF8StringEncoding];
+        
+        // Create attributed string from HTML
+        CGSize maxImageSize = CGSizeMake(self.view.bounds.size.width - 20.0, self.view.bounds.size.height - 20.0);
+        
+        // example for setting a willFlushCallback, that gets called before elements are written to the generated attributed string
+        void (^callBackBlock)(DTHTMLElement *element) = ^(DTHTMLElement *element) {
+            // if an element is larger than twice the font size put it in it's own block
+            if (element.displayStyle == DTHTMLElementDisplayStyleInline && element.textAttachment.displaySize.height > 2.0 * element.fontDescriptor.pointSize)
+            {
+                element.displayStyle = DTHTMLElementDisplayStyleBlock;
+            }
+        };
+        
+        
+        NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithFloat:1.0], NSTextSizeMultiplierDocumentOption, [NSValue valueWithCGSize:maxImageSize], DTMaxImageSize,
+                                 @"Helvetica", DTDefaultFontFamily,  @"purple", DTDefaultLinkColor, nil, NSBaseURLDocumentOption, callBackBlock, DTWillFlushBlockCallBack, nil]; 
+        NSAttributedString *string = [[NSAttributedString alloc] initWithHTML:data options:options documentAttributes:NULL];
+        
+        // Display string
+        compliedView.contentView.edgeInsets = UIEdgeInsetsMake(10, 10, 10, 10);
+        compliedView.attributedString = string;
+        [compliedView setFrame:CGRectMake(0, headerViewHeight-10, self.view.frame.size.width, compliedView.contentSize.height)];
+        compliedView.hidden = YES;
+        [headerView addSubview:compliedView];
+    }
 }
 
 - (void)tableViewHeaderTapped:(UITapGestureRecognizer *)recognizer
@@ -405,9 +401,11 @@
     
     if (headerViewStatus == 0) {
         headerViewStatus = 1;
-        newRect.size.height = headerViewHeight + compliedView.contentSize.height;
-        headerView.frame = newRect;
-        self.tableView.tableHeaderView = headerView;
+        if (compliedView != nil) {
+            newRect.size.height = headerViewHeight + compliedView.contentSize.height - 10;
+            headerView.frame = newRect;
+            self.tableView.tableHeaderView = headerView;
+        }
     } else {
         headerViewStatus = 0;
         compliedView.hidden = YES;
@@ -455,7 +453,7 @@
 		
 		// we could customize the view that shows before playback starts
 		UIView *grayView = [[UIView alloc] initWithFrame:frame];
-		grayView.backgroundColor = [UIColor blackColor];
+		grayView.backgroundColor = [DTColor blackColor];
 		
 		// find a player for this URL if we already got one
 		MPMoviePlayerController *player = nil;
@@ -533,15 +531,7 @@
 		}
 		
 		// url for deferred loading
-        imageView.url = attachment.contentURL;
-        imageView.url = [NSURL URLWithString:@"http://sparrow.lvexiao.com/statics/images/large_6ffb7878e66c668235bfe984f3769fed.jpg"];
-//        if (attachment.hyperLinkURL) {
-//            imageView.url = attachment.contentURL;
-//        } else {
-//            imageView.url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", PREFIX_URL, attachment.contentURL]];
-//        }
-        
-        NSLog(@"%@", imageView.url);
+		imageView.url = attachment.contentURL;
 		
 		// if there is a hyperlink then add a link button on top of this image
 		if (attachment.hyperLinkURL)
@@ -552,7 +542,7 @@
 			DTLinkButton *button = (DTLinkButton *)[self attributedTextContentView:attributedTextContentView viewForLink:attachment.hyperLinkURL identifier:attachment.hyperLinkGUID frame:imageView.bounds];
 			[imageView addSubview:button];
 		}
-        
+		
 		return imageView;
 	}
 	else if (attachment.contentType == DTTextAttachmentTypeIframe)
@@ -578,6 +568,27 @@
 	return nil;
 }
 
+
+- (BOOL)attributedTextContentView:(DTAttributedTextContentView *)attributedTextContentView shouldDrawBackgroundForTextBlock:(DTTextBlock *)textBlock frame:(CGRect)frame context:(CGContextRef)context forLayoutFrame:(DTCoreTextLayoutFrame *)layoutFrame
+{
+	UIBezierPath *roundedRect = [UIBezierPath bezierPathWithRoundedRect:frame cornerRadius:10];
+    
+	CGColorRef color = [textBlock.backgroundColor CGColor];
+	if (color)
+	{
+		CGContextSetFillColorWithColor(context, color);
+		CGContextAddPath(context, [roundedRect CGPath]);
+		CGContextFillPath(context);
+		
+		CGContextAddPath(context, [roundedRect CGPath]);
+		CGContextSetRGBStrokeColor(context, 0, 0, 0, 1);
+		CGContextStrokePath(context);
+		return NO;
+	}
+	
+	return YES; // draw standard background
+}
+
 #pragma mark DTLazyImageViewDelegate
 
 - (void)lazyImageView:(DTLazyImageView *)lazyImageView didChangeImageSize:(CGSize)size {
@@ -596,20 +607,20 @@
 			oneAttachment.displaySize = imageSize;
 		}
 	}
-    
-    CGPoint newPoint = lazyImageView.center;
-    newPoint.x = 160;
-    lazyImageView.center = newPoint;
-    
-    NSLog([NSString stringWithFormat:@"x:%f y:%f w:%f h:%f",lazyImageView.frame.origin.x,lazyImageView.frame.origin.y,lazyImageView.frame.size.width,lazyImageView.frame.size.height]);
+//    
+//    CGPoint newPoint = lazyImageView.center;
+//    newPoint.x = 160;
+//    lazyImageView.center = newPoint;
+//    
+//    NSLog([NSString stringWithFormat:@"x:%f y:%f w:%f h:%f",lazyImageView.frame.origin.x,lazyImageView.frame.origin.y,lazyImageView.frame.size.width,lazyImageView.frame.size.height]);
 	
 	// redo layout
 	// here we're layouting the entire string, might be more efficient to only relayout the paragraphs that contain these attachments
 	[compliedView.contentView relayoutText];
-    [compliedView setFrame:CGRectMake(0, headerViewHeight, self.view.frame.size.width, compliedView.contentSize.height)];
+    [compliedView setFrame:CGRectMake(0, headerViewHeight-10, self.view.frame.size.width, compliedView.contentSize.height)];
     if (headerViewStatus == 1) {
         CGRect newRect = headerView.frame;
-        newRect.size.height = headerViewHeight + compliedView.contentSize.height;;
+        newRect.size.height = headerViewHeight + compliedView.contentSize.height-10;
         headerView.frame = newRect;
         self.tableView.tableHeaderView = headerView;
     }
