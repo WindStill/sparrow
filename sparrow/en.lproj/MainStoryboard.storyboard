@@ -71,7 +71,7 @@
                                 <rect key="frame" x="40" y="20" width="240" height="74"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="202070317" placeholder="用户名" minimumFontSize="17" id="Sp5-iX-2Lp">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="windstill" placeholder="用户名" minimumFontSize="17" clearButtonMode="whileEditing" id="Sp5-iX-2Lp">
                                 <rect key="frame" x="83" y="26" width="188" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -81,7 +81,7 @@
                                 <rect key="frame" x="83" y="58" width="188" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="0.93638800182481752" alpha="1" colorSpace="calibratedWhite"/>
@@ -800,6 +800,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="A1z-hN-vPH"/>
+        <segue reference="0vT-VZ-hN0"/>
     </inferredMetricsTieBreakers>
 </document>

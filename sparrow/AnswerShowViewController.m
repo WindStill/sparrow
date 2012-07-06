@@ -94,28 +94,7 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-- (void)lazyImageView:(DTLazyImageView *)lazyImageView didChangeImageSize:(CGSize)size
-{
-    NSURL *url = lazyImageView.url;
-	CGSize imageSize = size;
-	
-	NSPredicate *pred = [NSPredicate predicateWithFormat:@"contentURL == %@", url];
-	
-	// update all attachments that matchin this URL (possibly multiple images with same size)
-	for (DTTextAttachment *oneAttachment in [compliedView.contentView.layoutFrame textAttachmentsWithPredicate:pred])
-	{
-		oneAttachment.originalSize = imageSize;
-		
-		if (!CGSizeEqualToSize(imageSize, oneAttachment.displaySize))
-		{
-			oneAttachment.displaySize = imageSize;
-		}
-	}
-	
-	// redo layout
-	// here we're layouting the entire string, might be more efficient to only relayout the paragraphs that contain these attachments
-	[compliedView.contentView relayoutText];
-}
+
 
 - (void)compliedViewTapped:(UITapGestureRecognizer *)recognizer
 {

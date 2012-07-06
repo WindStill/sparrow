@@ -7,14 +7,24 @@
 //
 
 #import "QuestionShowTableViewController.h"
-
+#import "DTHTMLElement.h"
+#import "DTCoreTextFontDescriptor.h"
+#import "DTCoreTextConstants.h"
+#import "DTCoreTextConstants.h"
+#import "DTLinkButton.h"
+#import "DTWebVideoView.h"
+#import "DTColor+HTML.h"
 
 @implementation QuestionShowTableViewController
 @synthesize sampleDetail;
 @synthesize fullDetail;
 @synthesize answers;
+@synthesize headerView;
 @synthesize headerViewStatus;
 @synthesize headerViewHeight;
+@synthesize compliedView;
+@synthesize mediaPlayers;
+
 //@synthesize headerView;
 @synthesize delegate;
 
@@ -45,6 +55,7 @@
     self.navigationItem.title = [NSString stringWithFormat:@"%@ 个回答", [sampleDetail objectForKey:@"answers_count"]];
     [self initTableViewHeader];
     [self requestQuestionDetail];
+    [self buildCompliedViewInTableViewHeader];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -115,7 +126,6 @@
     NSDictionary *answer = [answers objectAtIndex:row];
     NSDictionary *user = [answer objectForKey:@"user"];
     NSString *name = [user objectForKey:@"name"];
-    NSString *bio = [user objectForKey:@"bio"];
     NSString *avatar_url = [user objectForKey:@"avatar_url"];
     NSString *markdown = [answer objectForKey:@"markdown"];
     NSInteger voteCount = [answer objectForKey:@"votes_count"];
@@ -207,7 +217,7 @@
      */
 }
 
-- (void)initTableViewHeader:(UIView *)headerView
+- (void)buildBountyViewInTableViewHeader
 {
     NSNumber *bounty = [sampleDetail objectForKey:@"bounties"];
     UIImageView *bountyImageView = nil;
@@ -256,14 +266,9 @@
     headerViewHeight = bountyImageView.image.size.height + 20;
 }
 
-- (void)initTableViewHeader
+- (void)buildTitleViewAInTableViewHeader
 {
     NSString *title = [sampleDetail objectForKey:@"title"];
-    UIView *headerView = [[UIView alloc] initWithFrame:CGRectZero];
-//    UIView *headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 320, 100)];
-    
-    [self initTableViewHeader:headerView];
-        
     UILabel *titleLable = [[UILabel alloc] initWithFrame:CGRectZero];
     titleLable.numberOfLines = 5;
     titleLable.font = [UIFont systemFontOfSize:15];
@@ -271,18 +276,47 @@
     CGSize constraint = CGSizeMake(232, 20000.0f);
     CGSize size = [title sizeWithFont:[UIFont systemFontOfSize:15] constrainedToSize:constraint lineBreakMode:UILineBreakModeWordWrap];
     [titleLable setFrame:CGRectMake(78, 10, 232, size.height)];
-    
     titleLable.text = title;
-    
     [headerView addSubview:titleLable];
-    if (size.height > headerViewHeight) {
-        headerViewHeight = size.height+20;
+    
+    NSDictionary *user = [sampleDetail objectForKey:@"user"];
+    UIView *userView = [[UIView alloc]initWithFrame:CGRectMake(78, 15+size.height, 232, 20)];
+    UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 20, 20)];
+    [imageView setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", PREFIX_URL, [user objectForKey:@"avatar_url"]]]
+              placeholderImage:[UIImage imageNamed:@"111-user.png"]]; 
+    [userView addSubview:imageView];
+    UILabel *nameLabel = [[UILabel alloc]initWithFrame:CGRectMake(22, 0, 133, 20)];
+    nameLabel.font = [UIFont systemFontOfSize:13];
+    nameLabel.lineBreakMode = UILineBreakModeTailTruncation;
+    nameLabel.text = [NSString stringWithFormat:@"%@", [user objectForKey:@"name"]];
+    [userView addSubview:nameLabel];
+    UILabel *dateLabel = [[UILabel alloc]initWithFrame:CGRectMake(157, 0, 75, 20)];
+    dateLabel.font = [UIFont systemFontOfSize:13];
+    dateLabel.text = [[sampleDetail objectForKey:@"created_at"]substringToIndex:10];
+    [userView addSubview:dateLabel];
+    [headerView addSubview:userView];
+    
+    NSInteger height = titleLable.frame.size.height + 5 + userView.frame.size.height;
+    if (height + 20 > headerViewHeight) {
+        headerViewHeight = height+20;
     }
+}
+
+- (void)initTableViewHeader
+{
+    
+    headerView = [[UIView alloc] initWithFrame:CGRectZero];
+//    UIView *headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 320, 100)];
+    
+    [self buildBountyViewInTableViewHeader];
+    [self buildTitleViewAInTableViewHeader];    
+    
     headerView.frame = CGRectMake(0, 0, 320, headerViewHeight);
-    headerView.backgroundColor = [UIColor lightGrayColor];
+//    headerView.backgroundColor = [UIColor lightGrayColor];
     [self.tableView setTableHeaderView:headerView];
     
     UITapGestureRecognizer *tableViewHeaderTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tableViewHeaderTapped:)];
+    tableViewHeaderTap.numberOfTapsRequired = 1;
     [headerView addGestureRecognizer:tableViewHeaderTap];
 }
 
@@ -322,19 +356,263 @@
     return html;
 }
 
+- (void)buildCompliedViewInTableViewHeader
+{
+//    CGRect frame = CGRectMake(0.0, headerViewHeight, self.view.frame.size.width, self.view.frame.size.height);
+    [DTAttributedTextContentView setLayerClass:[CATiledLayer class]];
+	compliedView = [[DTAttributedTextView alloc] initWithFrame:CGRectMake(0.0, headerViewHeight, self.view.frame.size.width, self.view.frame.size.height)];
+	compliedView.textDelegate = self;
+	compliedView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+	[headerView addSubview:compliedView];
+    
+    NSString *html = [fullDetail objectForKey:@"compiled"];
+	NSData *data = [html dataUsingEncoding:NSUTF8StringEncoding];
+    
+    // Create attributed string from HTML
+	CGSize maxImageSize = CGSizeMake(self.view.bounds.size.width - 20.0, self.view.bounds.size.height - 20.0);
+	
+	// example for setting a willFlushCallback, that gets called before elements are written to the generated attributed string
+	void (^callBackBlock)(DTHTMLElement *element) = ^(DTHTMLElement *element) {
+		// if an element is larger than twice the font size put it in it's own block
+		if (element.displayStyle == DTHTMLElementDisplayStyleInline && element.textAttachment.displaySize.height > 2.0 * element.fontDescriptor.pointSize)
+		{
+			element.displayStyle = DTHTMLElementDisplayStyleBlock;
+		}
+	};
+    
+	
+	NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithFloat:1.0], NSTextSizeMultiplierDocumentOption, [NSValue valueWithCGSize:maxImageSize], DTMaxImageSize,
+                             @"Helvetica", DTDefaultFontFamily,  @"purple", DTDefaultLinkColor, nil, NSBaseURLDocumentOption, callBackBlock, DTWillFlushBlockCallBack, nil]; 
+	NSAttributedString *string = [[NSAttributedString alloc] initWithHTML:data options:options documentAttributes:NULL];
+	
+	// Display string
+	compliedView.contentView.edgeInsets = UIEdgeInsetsMake(10, 10, 10, 10);
+	compliedView.attributedString = string;
+    [compliedView setFrame:CGRectMake(0, headerViewHeight, self.view.frame.size.width, compliedView.contentSize.height)];
+    compliedView.hidden = YES;
+    [headerView addSubview:compliedView];
+}
+
 - (void)tableViewHeaderTapped:(UITapGestureRecognizer *)recognizer
 {
-    NSInteger height = 140;
+    CGRect newRect = headerView.frame;
+    
+    [UIView beginAnimations:@"expandView" context:nil];
+    [UIView setAnimationDuration:0.2f];
+    [UIView setAnimationDelegate:self];
+    [UIView setAnimationDidStopSelector:@selector(AnimationHasFinished:finished:context:)];
+    [UIView setAnimationCurve:UIViewAutoresizingFlexibleHeight];
+    
     if (headerViewStatus == 0) {
         headerViewStatus = 1;
+        newRect.size.height = headerViewHeight + compliedView.contentSize.height;
+        headerView.frame = newRect;
+        self.tableView.tableHeaderView = headerView;
     } else {
         headerViewStatus = 0;
-        height = headerViewHeight;
+        compliedView.hidden = YES;
+        
+        newRect.size.height = headerViewHeight;
+        headerView.frame = newRect;
+        self.tableView.tableHeaderView = headerView;
     }
-    UIView *headerView = self.tableView.tableHeaderView;
-    headerView.frame = CGRectMake(0, 0, 320, height);
-    [self.tableView setTableHeaderView:headerView];
-    NSLog(@"TableViewHeader tapped");
+    
+    [UIView commitAnimations];
+}
+
+- (void)AnimationHasFinished:(NSString *)animationID finished:(BOOL)finished context:(void *)context;
+{
+    if (headerViewStatus == 0) {
+        compliedView.hidden = YES;
+    } else {
+        compliedView.hidden = NO;
+    }
+}
+
+#pragma mark Custom Views on Text
+- (UIView *)attributedTextContentView:(DTAttributedTextContentView *)attributedTextContentView viewForLink:(NSURL *)url identifier:(NSString *)identifier frame:(CGRect)frame
+{
+	DTLinkButton *button = [[DTLinkButton alloc] initWithFrame:frame];
+	button.URL = url;
+	button.minimumHitSize = CGSizeMake(25, 25); // adjusts it's bounds so that button is always large enough
+	button.GUID = identifier;
+	
+	// use normal push action for opening URL
+	[button addTarget:self action:@selector(linkPushed:) forControlEvents:UIControlEventTouchUpInside];
+	
+	// demonstrate combination with long press
+	UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(linkLongPressed:)];
+	[button addGestureRecognizer:longPress];
+	
+	return button;
+}
+
+- (UIView *)attributedTextContentView:(DTAttributedTextContentView *)attributedTextContentView viewForAttachment:(DTTextAttachment *)attachment frame:(CGRect)frame
+{
+	if (attachment.contentType == DTTextAttachmentTypeVideoURL)
+	{
+		NSURL *url = (id)attachment.contentURL;
+		
+		// we could customize the view that shows before playback starts
+		UIView *grayView = [[UIView alloc] initWithFrame:frame];
+		grayView.backgroundColor = [UIColor blackColor];
+		
+		// find a player for this URL if we already got one
+		MPMoviePlayerController *player = nil;
+		for (player in self.mediaPlayers)
+		{
+			if ([player.contentURL isEqual:url])
+			{
+				break;
+			}
+		}
+		
+		if (!player)
+		{
+			player = [[MPMoviePlayerController alloc] initWithContentURL:url];
+			[self.mediaPlayers addObject:player];
+		}
+		
+#if __IPHONE_OS_VERSION_MAX_ALLOWED > __IPHONE_4_2
+		NSString *airplayAttr = [attachment.attributes objectForKey:@"x-webkit-airplay"];
+		if ([airplayAttr isEqualToString:@"allow"])
+		{
+			if ([player respondsToSelector:@selector(setAllowsAirPlay:)])
+			{
+				player.allowsAirPlay = YES;
+			}
+		}
+#endif
+		
+		NSString *controlsAttr = [attachment.attributes objectForKey:@"controls"];
+		if (controlsAttr)
+		{
+			player.controlStyle = MPMovieControlStyleEmbedded;
+		}
+		else
+		{
+			player.controlStyle = MPMovieControlStyleNone;
+		}
+		
+		NSString *loopAttr = [attachment.attributes objectForKey:@"loop"];
+		if (loopAttr)
+		{
+			player.repeatMode = MPMovieRepeatModeOne;
+		}
+		else
+		{
+			player.repeatMode = MPMovieRepeatModeNone;
+		}
+		
+		NSString *autoplayAttr = [attachment.attributes objectForKey:@"autoplay"];
+		if (autoplayAttr)
+		{
+			player.shouldAutoplay = YES;
+		}
+		else
+		{
+			player.shouldAutoplay = NO;
+		}
+		
+		[player prepareToPlay];
+		
+		player.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+		player.view.frame = grayView.bounds;
+		[grayView addSubview:player.view];
+		
+		return grayView;
+	}
+	else if (attachment.contentType == DTTextAttachmentTypeImage)
+	{
+		// if the attachment has a hyperlinkURL then this is currently ignored
+		DTLazyImageView *imageView = [[DTLazyImageView alloc] initWithFrame:frame];
+		imageView.delegate = self;
+		if (attachment.contents)
+		{
+			imageView.image = attachment.contents;
+		}
+		
+		// url for deferred loading
+        imageView.url = attachment.contentURL;
+        imageView.url = [NSURL URLWithString:@"http://sparrow.lvexiao.com/statics/images/large_6ffb7878e66c668235bfe984f3769fed.jpg"];
+//        if (attachment.hyperLinkURL) {
+//            imageView.url = attachment.contentURL;
+//        } else {
+//            imageView.url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", PREFIX_URL, attachment.contentURL]];
+//        }
+        
+        NSLog(@"%@", imageView.url);
+		
+		// if there is a hyperlink then add a link button on top of this image
+		if (attachment.hyperLinkURL)
+		{
+			// NOTE: this is a hack, you probably want to use your own image view and touch handling
+			// also, this treats an image with a hyperlink by itself because we don't have the GUID of the link parts
+			imageView.userInteractionEnabled = YES;
+			DTLinkButton *button = (DTLinkButton *)[self attributedTextContentView:attributedTextContentView viewForLink:attachment.hyperLinkURL identifier:attachment.hyperLinkGUID frame:imageView.bounds];
+			[imageView addSubview:button];
+		}
+        
+		return imageView;
+	}
+	else if (attachment.contentType == DTTextAttachmentTypeIframe)
+	{
+		DTWebVideoView *videoView = [[DTWebVideoView alloc] initWithFrame:frame];
+		videoView.attachment = attachment;
+		
+		return videoView;
+	}
+	else if (attachment.contentType == DTTextAttachmentTypeObject)
+	{
+		// somecolorparameter has a HTML color
+		UIColor *someColor = [UIColor colorWithHTMLName:[attachment.attributes objectForKey:@"somecolorparameter"]];
+		
+		UIView *someView = [[UIView alloc] initWithFrame:frame];
+		someView.backgroundColor = someColor;
+		someView.layer.borderWidth = 1;
+		someView.layer.borderColor = [UIColor blackColor].CGColor;
+		
+		return someView;
+	}
+	
+	return nil;
+}
+
+#pragma mark DTLazyImageViewDelegate
+
+- (void)lazyImageView:(DTLazyImageView *)lazyImageView didChangeImageSize:(CGSize)size {
+	NSURL *url = lazyImageView.url;
+	CGSize imageSize = size;
+	
+	NSPredicate *pred = [NSPredicate predicateWithFormat:@"contentURL == %@", url];
+	
+	// update all attachments that matchin this URL (possibly multiple images with same size)
+	for (DTTextAttachment *oneAttachment in [compliedView.contentView.layoutFrame textAttachmentsWithPredicate:pred])
+	{
+		oneAttachment.originalSize = imageSize;
+		
+		if (!CGSizeEqualToSize(imageSize, oneAttachment.displaySize))
+		{
+			oneAttachment.displaySize = imageSize;
+		}
+	}
+    
+    CGPoint newPoint = lazyImageView.center;
+    newPoint.x = 160;
+    lazyImageView.center = newPoint;
+    
+    NSLog([NSString stringWithFormat:@"x:%f y:%f w:%f h:%f",lazyImageView.frame.origin.x,lazyImageView.frame.origin.y,lazyImageView.frame.size.width,lazyImageView.frame.size.height]);
+	
+	// redo layout
+	// here we're layouting the entire string, might be more efficient to only relayout the paragraphs that contain these attachments
+	[compliedView.contentView relayoutText];
+    [compliedView setFrame:CGRectMake(0, headerViewHeight, self.view.frame.size.width, compliedView.contentSize.height)];
+    if (headerViewStatus == 1) {
+        CGRect newRect = headerView.frame;
+        newRect.size.height = headerViewHeight + compliedView.contentSize.height;;
+        headerView.frame = newRect;
+        self.tableView.tableHeaderView = headerView;
+    }
 }
 
 @end
