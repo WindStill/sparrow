@@ -99,38 +99,23 @@
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n9V-ct-C5v" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController definesPresentationContext="YES" id="7HW-Fy-CSa" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="提问" image="doc_edit.png" id="Mrm-7B-y6I"/>
+                    <tabBarItem key="tabBarItem" title="广场" image="list_bullets.png" id="Mrm-7B-y6I"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Fn7-jD-cIN">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="q4R-w5-PmL" kind="relationship" relationship="rootViewController" id="zLM-8C-ltP"/>
+                        <segue destination="Yad-O9-jGc" kind="relationship" relationship="rootViewController" id="nQM-CZ-CdV"/>
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="-187" y="794"/>
-        </scene>
-        <scene sceneID="eRK-dz-nQD">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bYK-Ex-aEj" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="q4R-w5-PmL" customClass="QuestionCreateViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="O8c-wd-gZF">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="提问" id="uhs-in-QKK"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                </viewController>
-            </objects>
-            <point key="canvasLocation" x="282" y="794"/>
+            <point key="canvasLocation" x="-187" y="136"/>
         </scene>
         <scene sceneID="cpD-6U-jBS">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S6E-2J-QZa" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController definesPresentationContext="YES" id="nxO-y6-UTr" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="搜索" image="zoom.png" id="vnb-fm-xPl"/>
+                    <tabBarItem key="tabBarItem" title="搜索" image="magnifying_glass.png" id="vnb-fm-xPl"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="bnf-MO-teT">
                         <autoresizingMask key="autoresizingMask"/>
@@ -140,7 +125,7 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="-187" y="129"/>
+            <point key="canvasLocation" x="-187" y="793"/>
         </scene>
         <scene sceneID="YTV-0N-aRz">
             <objects>
@@ -154,7 +139,7 @@
                     </connections>
                 </searchDisplayController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sdW-qt-1v0" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="jjl-Gd-Adm" sceneMemberID="viewController">
+                <viewController id="jjl-Gd-Adm" customClass="SearchViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="COw-s3-5Z0">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -170,7 +155,7 @@
                                     <string>标签</string>
                                 </scopeButtonTitles>
                                 <connections>
-                                    <outlet property="delegate" destination="jjl-Gd-Adm" id="orG-ib-2uX"/>
+                                    <outlet property="delegate" destination="jjl-Gd-Adm" id="asI-ah-9rl"/>
                                 </connections>
                             </searchBar>
                         </subviews>
@@ -183,7 +168,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="298" y="129"/>
+            <point key="canvasLocation" x="298" y="793"/>
         </scene>
         <scene sceneID="UlJ-3Z-1lq">
             <objects>
@@ -211,7 +196,7 @@
                     </tableView>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="701" y="129"/>
+            <point key="canvasLocation" x="701" y="793"/>
         </scene>
         <scene sceneID="dll-vo-EEA">
             <objects>
@@ -228,6 +213,66 @@
                 </navigationController>
             </objects>
             <point key="canvasLocation" x="-187" y="1415"/>
+        </scene>
+        <scene sceneID="qMe-ar-dUT">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="POO-6o-2sV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="Yad-O9-jGc" customClass="QuestionSquareViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MCq-Jb-HKB">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" tag="1" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="5wN-fN-TvN">
+                                <rect key="frame" x="0.0" y="50" width="320" height="320"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="question" id="n3d-8M-A3a">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <segue destination="qRq-a9-Yoj" kind="push" id="y9Z-Pq-LJ1"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Yad-O9-jGc" id="vmP-hE-eig"/>
+                                    <outlet property="delegate" destination="Yad-O9-jGc" id="DFq-8o-lD6"/>
+                                </connections>
+                            </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="HJG-Pw-FKa">
+                                <rect key="frame" x="20" y="10" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="所有问题"/>
+                                    <segment title="悬赏问题"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segementChanged:" destination="Yad-O9-jGc" eventType="valueChanged" id="LT0-IA-iSq"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" minimumFontSize="10" id="eyY-4j-iTi">
+                                <rect key="frame" x="0.0" y="50" width="320" height="1"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="广场" id="rY1-Wp-dqe">
+                        <barButtonItem key="rightBarButtonItem" title="提问" id="SYK-x0-tVQ"/>
+                    </navigationItem>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="298" y="136"/>
         </scene>
         <scene sceneID="3dn-1a-X07">
             <objects>
@@ -686,7 +731,7 @@
                     </navigationItem>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="715" y="-1195"/>
+            <point key="canvasLocation" x="991" y="-507"/>
         </scene>
         <scene sceneID="p3p-eQ-Xx8">
             <objects>
@@ -700,7 +745,7 @@
                     <navigationItem key="navigationItem" id="Omj-3b-vDg"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1101" y="-1195"/>
+            <point key="canvasLocation" x="1425" y="-507"/>
         </scene>
         <scene sceneID="St8-dI-O6C">
             <objects>
@@ -728,7 +773,7 @@
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e0H-cJ-3OJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController definesPresentationContext="YES" id="nuo-jb-mN4" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="动态" image="list_bullets.png" id="R7D-8o-CST"/>
+                    <tabBarItem key="tabBarItem" title="动态" image="house.png" id="R7D-8o-CST"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="HcJ-r1-Rdg">
                         <autoresizingMask key="autoresizingMask"/>
@@ -743,13 +788,13 @@
     </scenes>
     <resources>
         <image name="cog_icon.png" width="24" height="24"/>
-        <image name="doc_edit.png" width="24" height="24"/>
+        <image name="house.png" width="26" height="26"/>
         <image name="input_background.png" width="260" height="90"/>
         <image name="list_bullets.png" width="24" height="24"/>
         <image name="luexiao.png" width="320" height="460"/>
+        <image name="magnifying_glass.png" width="26" height="26"/>
         <image name="rss.png" width="24" height="24"/>
         <image name="user.png" width="24" height="24"/>
-        <image name="zoom.png" width="24" height="24"/>
     </resources>
     <classes>
         <class className="ActivityTableViewController" superclassName="UITableViewController">
@@ -765,11 +810,17 @@
                 <relationship kind="outlet" name="button" candidateClass="UIButton"/>
             </relationships>
         </class>
-        <class className="QuestionCreateViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/QuestionCreateViewController.h"/>
-        </class>
         <class className="QuestionShowTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/QuestionShowTableViewController.h"/>
+        </class>
+        <class className="QuestionSquareViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/QuestionSquareViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="segementChanged:"/>
+            </relationships>
+        </class>
+        <class className="SearchViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SearchViewController.h"/>
         </class>
         <class className="SignInViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SignInViewController.h"/>
@@ -801,5 +852,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="0vT-VZ-hN0"/>
+        <segue reference="y9Z-Pq-LJ1"/>
     </inferredMetricsTieBreakers>
 </document>

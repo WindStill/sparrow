@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface SearchViewController : UIViewController
-<UISearchBarDelegate>
+<UISearchBarDelegate, UISearchDisplayDelegate>
 
 @end

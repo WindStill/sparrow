@@ -231,6 +231,11 @@
 		
 		// url for deferred loading
 		imageView.url = attachment.contentURL;
+        NSString *urlString = [[imageView url] absoluteString];
+        if ([urlString hasPrefix:@"/statics/images/"]) {
+            urlString = [NSString stringWithFormat:@"http://sparrow.lvexiao.com%@", urlString];
+            imageView.url = [NSURL URLWithString:urlString];
+        }
 		
 		// if there is a hyperlink then add a link button on top of this image
 		if (attachment.hyperLinkURL)
@@ -328,7 +333,7 @@
 
 - (void)lazyImageView:(DTLazyImageView *)lazyImageView didChangeImageSize:(CGSize)size {
 	NSURL *url = lazyImageView.url;
-	CGSize imageSize = size;
+	CGSize imageSize = CGSizeMake(self.view.bounds.size.width - 20.0, self.view.bounds.size.height - 20.0);
 	
 	NSPredicate *pred = [NSPredicate predicateWithFormat:@"contentURL == %@", url];
 	

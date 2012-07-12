@@ -8,6 +8,7 @@
 
 #import "ActivityTableViewController.h"
 #import "Constant.h"
+#import "LXUtil.h"
 #import "ASIHTTPRequest.h"
 #import "JSONKit.h"
 #import "UIImageView+WebCache.h"
@@ -161,7 +162,7 @@
     
     UIImageView * imageView = (UIImageView *)[cell viewWithTag:1];
     
-    [imageView setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", PREFIX_URL, avatar_url]]
+    [imageView setImageWithURL:[NSURL URLWithString:[LXUtil contatImageURL:avatar_url]]
                     placeholderImage:[UIImage imageNamed:@"111-user.png"]];  
     imageView.layer.borderWidth = 1;
     imageView.layer.masksToBounds = YES;

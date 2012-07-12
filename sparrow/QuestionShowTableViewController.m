@@ -124,7 +124,7 @@
     NSInteger voteCount = [answer objectForKey:@"votes_count"];
     
     UIImageView *imageView = (UIImageView *)[cell viewWithTag:1];
-    [imageView setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", PREFIX_URL, avatar_url]]
+    [imageView setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", PREFIX_URL, avatar_url]]
               placeholderImage:[UIImage imageNamed:@"111-user.png"]];
     imageView.layer.borderWidth = 1;
     imageView.layer.masksToBounds = YES;
@@ -275,7 +275,7 @@
     NSDictionary *user = [sampleDetail objectForKey:@"user"];
     UIView *userView = [[UIView alloc]initWithFrame:CGRectMake(78, 15+size.height, 232, 20)];
     UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 20, 20)];
-    [imageView setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", PREFIX_URL, [user objectForKey:@"avatar_url"]]]
+    [imageView setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", PREFIX_URL, [user objectForKey:@"avatar_url"]]]
               placeholderImage:[UIImage imageNamed:@"111-user.png"]]; 
     [userView addSubview:imageView];
     UILabel *nameLabel = [[UILabel alloc]initWithFrame:CGRectMake(22, 0, 133, 20)];
@@ -532,6 +532,11 @@
 		
 		// url for deferred loading
 		imageView.url = attachment.contentURL;
+        NSString *urlString = [[imageView url] absoluteString];
+        if ([urlString hasPrefix:@"/statics/images/"]) {
+            urlString = [NSString stringWithFormat:@"http://sparrow.lvexiao.com%@", urlString];
+            imageView.url = [NSURL URLWithString:urlString];
+        }
 		
 		// if there is a hyperlink then add a link button on top of this image
 		if (attachment.hyperLinkURL)

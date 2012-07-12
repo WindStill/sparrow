@@ -25,5 +25,4 @@
 
 - (void)linkPushed:(DTLinkButton *)button;
 - (void)linkLongPressed:(UILongPressGestureRecognizer *)gesture;
-- (void)debugButton:(UIBarButtonItem *)sender;
 @end
