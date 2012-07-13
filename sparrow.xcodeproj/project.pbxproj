@@ -36,6 +36,8 @@
 		0430184215A431000050DA7E /* AnswerShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0430184115A431000050DA7E /* AnswerShowViewController.m */; };
 		04395CA315830BF400A8B488 /* UserShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04395CA215830BF400A8B488 /* UserShowViewController.m */; };
 		04395CB715834EA600A8B488 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04395CB615834EA600A8B488 /* SearchViewController.m */; };
+		045F5FC015AFBBC500E76A6F /* SearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045F5FBF15AFBBC500E76A6F /* SearchTableViewController.m */; };
+		045F5FC315B00E2C00E76A6F /* SearchResultTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045F5FC215B00E2C00E76A6F /* SearchResultTableViewController.m */; };
 		04712F1915AEA396008EAF6D /* LXUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 04712F1815AEA396008EAF6D /* LXUtil.m */; };
 		04877EF6159AB3CD006DD1D4 /* loginLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 04877EF5159AB3CD006DD1D4 /* loginLogo.png */; };
 		04AC720515AEE33D00C4486B /* QuestionSquareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AC720415AEE33D00C4486B /* QuestionSquareViewController.m */; };
@@ -110,6 +112,10 @@
 		04395CA215830BF400A8B488 /* UserShowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserShowViewController.m; sourceTree = "<group>"; };
 		04395CB515834EA500A8B488 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		04395CB615834EA600A8B488 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		045F5FBE15AFBBC500E76A6F /* SearchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTableViewController.h; sourceTree = "<group>"; };
+		045F5FBF15AFBBC500E76A6F /* SearchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTableViewController.m; sourceTree = "<group>"; };
+		045F5FC115B00E2C00E76A6F /* SearchResultTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultTableViewController.h; sourceTree = "<group>"; };
+		045F5FC215B00E2C00E76A6F /* SearchResultTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultTableViewController.m; sourceTree = "<group>"; };
 		04712F1715AEA396008EAF6D /* LXUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXUtil.h; sourceTree = "<group>"; };
 		04712F1815AEA396008EAF6D /* LXUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXUtil.m; sourceTree = "<group>"; };
 		04877EF5159AB3CD006DD1D4 /* loginLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginLogo.png; sourceTree = "<group>"; };
@@ -233,6 +239,19 @@
 			name = signin;
 			sourceTree = "<group>";
 		};
+		045F5FBC15AFBB9E00E76A6F /* search */ = {
+			isa = PBXGroup;
+			children = (
+				04395CB515834EA500A8B488 /* SearchViewController.h */,
+				04395CB615834EA600A8B488 /* SearchViewController.m */,
+				045F5FBE15AFBBC500E76A6F /* SearchTableViewController.h */,
+				045F5FBF15AFBBC500E76A6F /* SearchTableViewController.m */,
+				045F5FC115B00E2C00E76A6F /* SearchResultTableViewController.h */,
+				045F5FC215B00E2C00E76A6F /* SearchResultTableViewController.m */,
+			);
+			name = search;
+			sourceTree = "<group>";
+		};
 		0466051615709BCB00E88233 /* resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -328,6 +347,7 @@
 		04C20616156F302400B31E3F /* sparrow */ = {
 			isa = PBXGroup;
 			children = (
+				045F5FBC15AFBB9E00E76A6F /* search */,
 				042968AB15AED6A100CC0118 /* signin */,
 				042968AA15AED69100CC0118 /* activity */,
 				042968A915AED68400CC0118 /* user */,
@@ -337,8 +357,6 @@
 				04C2061F156F302400B31E3F /* AppDelegate.h */,
 				04C20620156F302400B31E3F /* AppDelegate.m */,
 				04C20622156F302400B31E3F /* MainStoryboard.storyboard */,
-				04395CB515834EA500A8B488 /* SearchViewController.h */,
-				04395CB615834EA600A8B488 /* SearchViewController.m */,
 				04D5D6671570D0BD00935C59 /* Constant.h */,
 				04C20617156F302400B31E3F /* Supporting Files */,
 				04193F5F159B1F7900ECAB48 /* MainViewController.h */,
@@ -489,6 +507,8 @@
 				0430184215A431000050DA7E /* AnswerShowViewController.m in Sources */,
 				04712F1915AEA396008EAF6D /* LXUtil.m in Sources */,
 				04AC720515AEE33D00C4486B /* QuestionSquareViewController.m in Sources */,
+				045F5FC015AFBBC500E76A6F /* SearchTableViewController.m in Sources */,
+				045F5FC315B00E2C00E76A6F /* SearchResultTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

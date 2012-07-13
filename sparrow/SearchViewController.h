@@ -9,6 +9,15 @@
 #import <UIKit/UIKit.h>
 
 @interface SearchViewController : UIViewController
-<UISearchBarDelegate, UISearchDisplayDelegate>
+<UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate>{
+    UISearchDisplayController *searchDisplayController;
+    UISearchBar *searchBar;
+    NSArray *allItems;
+    NSArray *searchResults;
+}
 
+@property (nonatomic, copy) NSArray *allItems;
+@property (nonatomic, copy) NSArray *searchResults;
+
+- (void)searchContentForSearchText:(NSString *)searchText scope:(NSInteger)scope;
 @end
