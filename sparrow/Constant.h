@@ -11,5 +11,5 @@
 #import "JSONKit.h"
 #import "UIImageView+WebCache.h"
 
-#define PREFIX_URL @"http://0.0.0.0:3000"
-//#define PREFIX_URL @"http://sparrow.lvexiao.com"
+//#define PREFIX_URL @"http://0.0.0.0:3000"
+#define PREFIX_URL @"http://sparrow.lvexiao.com"

@@ -11,6 +11,7 @@
 @implementation QuestionShowTableViewController
 @synthesize sampleDetail;
 @synthesize fullDetail;
+@synthesize questionId;
 @synthesize answers;
 @synthesize headerView;
 @synthesize headerViewStatus;
@@ -45,9 +46,9 @@
     [super viewDidLoad];
     headerViewStatus = 0;
     
-    self.navigationItem.title = [NSString stringWithFormat:@"%@ 个回答", [sampleDetail objectForKey:@"answers_count"]];
-    [self initTableViewHeader];
     [self requestQuestionDetail];
+    self.navigationItem.title = [NSString stringWithFormat:@"%@ 个回答", [fullDetail objectForKey:@"answers_count"]];
+    [self initTableViewHeader];
     [self buildCompliedViewInTableViewHeader];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -121,7 +122,7 @@
     NSString *name = [user objectForKey:@"name"];
     NSString *avatar_url = [user objectForKey:@"avatar_url"];
     NSString *compiled = [answer objectForKey:@"compiled"];
-    NSInteger voteCount = [answer objectForKey:@"votes_count"];
+    NSInteger voteCount = (NSInteger)[answer objectForKey:@"votes_count"];
     
     UIImageView *imageView = (UIImageView *)[cell viewWithTag:1];
     [imageView setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", PREFIX_URL, avatar_url]]
@@ -197,6 +198,15 @@
 }
 */
 
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    if ([self numberOfSectionsInTableView:tableView] == (section + 1)) {
+        return [UIView new];
+    }
+    return nil;
+}
+
+
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -212,7 +222,7 @@
 
 - (void)buildBountyViewInTableViewHeader
 {
-    NSNumber *bounty = [sampleDetail objectForKey:@"bounties"];
+    NSNumber *bounty = [fullDetail objectForKey:@"bounties"];
     UIImageView *bountyImageView = nil;
     if ([bounty integerValue] > 0) {
         bountyImageView = [[UIImageView alloc]initWithFrame:CGRectMake(10, 10, 60, 60)];
@@ -231,7 +241,7 @@
         answerCountLabel.backgroundColor = [UIColor clearColor];
         answerCountLabel.textColor = [UIColor darkGrayColor];
         answerCountLabel.font = [UIFont systemFontOfSize:13];
-        NSInteger answersCount = [sampleDetail objectForKey:@"answers_count"];
+        NSInteger answersCount = (NSInteger)[fullDetail objectForKey:@"answers_count"];
         answerCountLabel.text = [NSString stringWithFormat:@"%@ 回答", answersCount];
         [bountyImageView addSubview:answerCountLabel];
         
@@ -243,7 +253,7 @@
         UILabel *answersCountLabel = [[UILabel alloc]initWithFrame:CGRectMake(8, 8, 44, 25)];
         answersCountLabel.textAlignment = UITextAlignmentCenter;
         answersCountLabel.backgroundColor = [UIColor clearColor];
-        NSInteger answersCount = [sampleDetail objectForKey:@"answers_count"];
+        NSInteger answersCount = (NSInteger)[fullDetail objectForKey:@"answers_count"];
         answersCountLabel.text = [NSString stringWithFormat:@"%@", answersCount];
         [bountyImageView addSubview:answersCountLabel];
         
@@ -261,7 +271,7 @@
 
 - (void)buildTitleViewAInTableViewHeader
 {
-    NSString *title = [sampleDetail objectForKey:@"title"];
+    NSString *title = [fullDetail objectForKey:@"title"];
     UILabel *titleLable = [[UILabel alloc] initWithFrame:CGRectZero];
     titleLable.numberOfLines = 5;
     titleLable.font = [UIFont systemFontOfSize:15];
@@ -272,7 +282,7 @@
     titleLable.text = title;
     [headerView addSubview:titleLable];
     
-    NSDictionary *user = [sampleDetail objectForKey:@"user"];
+    NSDictionary *user = [fullDetail objectForKey:@"user"];
     UIView *userView = [[UIView alloc]initWithFrame:CGRectMake(78, 15+size.height, 232, 20)];
     UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 20, 20)];
     [imageView setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", PREFIX_URL, [user objectForKey:@"avatar_url"]]]
@@ -286,7 +296,7 @@
     UILabel *dateLabel = [[UILabel alloc]initWithFrame:CGRectMake(157, 0, 75, 20)];
     dateLabel.font = [UIFont systemFontOfSize:12];
     dateLabel.textColor = [UIColor darkGrayColor];
-    dateLabel.text = [[sampleDetail objectForKey:@"created_at"]substringToIndex:10];
+    dateLabel.text = [[fullDetail objectForKey:@"created_at"]substringToIndex:10];
     [userView addSubview:dateLabel];
     [headerView addSubview:userView];
     
@@ -316,8 +326,7 @@
 
 - (void)requestQuestionDetail
 {
-    NSInteger qid = [sampleDetail objectForKey:@"id"];
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/questions/%@.json",PREFIX_URL, qid]];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/questions/%@.json",PREFIX_URL, questionId]];
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
     [request startSynchronous];
     NSError *error = [request error];

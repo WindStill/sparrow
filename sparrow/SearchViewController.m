@@ -123,11 +123,23 @@
     [self.searchDisplayController setActive:NO animated:NO];
     
 //    self.view.backgroundColor = [UIColor whiteColor];
-    SearchResultTableViewController *destination = [SearchResultTableViewController alloc];
+    SearchResultTableViewController *destination = [self.storyboard instantiateViewControllerWithIdentifier:@"searchResultController"];
+//    SearchResultTableViewController *destination = [SearchResultTableViewController alloc];
     destination.navigationItem.title = scopeText;
     destination.scopeType = scopeType;
     destination.searchText = searchText;
-    [self.navigationController pushViewController:destination animated:NO];
+    [self.navigationController pushViewController:destination animated:YES];
+}
+
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
+{
+    searchBar.showsCancelButton = YES;
+    for (id subview in [searchBar subviews]) {
+        if ([subview isKindOfClass:[UIButton class]]) {
+            UIButton *button = (UIButton *)subview;
+            [button setTitle:@"取消" forState:UIControlStateNormal];
+        }
+    }
 }
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText

@@ -42,8 +42,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [button setBackgroundImage:[UIImage imageNamed:@"coverpageindicatorSel.png"] forState:UIControlStateHighlighted];
-    [button setBackgroundImage:[UIImage imageNamed:@"coverpageindicator.png"] forState:UIControlStateNormal];
+    [button setBackgroundImage:[UIImage imageNamed:@"coverpageindicatorSel"] forState:UIControlStateHighlighted];
+    [button setBackgroundImage:[UIImage imageNamed:@"coverpageindicator"] forState:UIControlStateNormal];
     
 }
 

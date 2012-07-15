@@ -10,4 +10,5 @@
 
 @interface LXUtil : NSObject
 + (NSString *)contatImageURL:(NSString *)url;
++ (UIColor *)cellImageBorderColor;
 @end

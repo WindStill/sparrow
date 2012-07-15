@@ -19,6 +19,7 @@
 @property (strong, nonatomic) NSDictionary *sampleDetail;
 @property (strong, nonatomic) NSDictionary *fullDetail;
 @property (strong, nonatomic) NSArray *answers;
+@property (nonatomic) NSString *questionId;
 @property (strong, nonatomic) id delegate;
 @property (strong, nonatomic) UIView *headerView;
 @property (nonatomic) NSInteger headerViewStatus;

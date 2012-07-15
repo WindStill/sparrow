@@ -43,13 +43,11 @@
     [super viewDidLoad];
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/activities", PREFIX_URL]];
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
-//    [request setRequestMethod:@"GET"];
     [request startSynchronous];
     NSError *error = [request error];
     if (!error) {
         NSString *response = [request responseString];
         self.listData = [response mutableObjectFromJSONString];
-//        NSLog(@"row: %lu", (unsigned long)[listData count]);
     }
     
 //    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"stack(.*).html" options:0 error:NULL];
@@ -164,7 +162,7 @@
     
     [imageView setImageWithURL:[NSURL URLWithString:[LXUtil contatImageURL:avatar_url]]
                     placeholderImage:[UIImage imageNamed:@"111-user.png"]];  
-    imageView.layer.borderWidth = 1;
+    imageView.layer.borderWidth = 0.7;
     imageView.layer.masksToBounds = YES;
     imageView.layer.cornerRadius = 3;
     imageView.layer.borderColor = [[UIColor lightGrayColor]CGColor];
@@ -246,12 +244,13 @@
     if ([destination respondsToSelector:@selector(setDelegate:)]) {
         [destination setValue:self forKey:@"delegate"];
     }
-    if ([destination respondsToSelector:@selector(setSampleDetail:)]) {
+    if ([destination respondsToSelector:@selector(setQuestionId:)]) {
         NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
         
         NSDictionary *activity = (NSDictionary *)[listData objectAtIndex:indexPath.row];
-        NSDictionary *questionDetail = (NSDictionary *)[activity objectForKey:@"question"];
-        [destination setValue:questionDetail forKey:@"sampleDetail"];
+        NSDictionary *question = (NSDictionary *)[activity objectForKey:@"question"];
+        NSString *questionId = [question objectForKey:@"id"];
+        [destination setValue:questionId forKey:@"questionId"];
     }
 }
 

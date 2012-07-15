@@ -108,6 +108,13 @@
     return [self.currentQuestions count];
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString *title = [[currentQuestions objectAtIndex:[indexPath row]] objectForKey:@"title"];
+    CGSize size = [title sizeWithFont:[UIFont systemFontOfSize:15] constrainedToSize:CGSizeMake(tableView.frame.size.width - 20, 500) lineBreakMode:UILineBreakModeWordWrap];
+    return size.height + 20;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"question";
@@ -115,13 +122,14 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
-    
     NSInteger row = indexPath.row;
     NSDictionary *question = [currentQuestions objectAtIndex:row];
-    
     NSString *title = [question objectForKey:@"title"];
-    cell.textLabel.text = title;
     
+    UILabel *titleLabel = (UILabel *)[cell viewWithTag:1];
+    CGSize size = [title sizeWithFont:[UIFont systemFontOfSize:15] constrainedToSize:CGSizeMake(tableView.frame.size.width - 20, 500) lineBreakMode:UILineBreakModeWordWrap];
+    titleLabel.frame = CGRectMake(10, 10, tableView.frame.size.width - 20, size.height);  
+    titleLabel.text = title;
     return cell;
 }
 
@@ -133,12 +141,12 @@
     if ([destination respondsToSelector:@selector(setDelegate:)]) {
         [destination setValue:self forKey:@"delegate"];
     }
-    if ([destination respondsToSelector:@selector(setSampleDetail:)]) {
+    if ([destination respondsToSelector:@selector(setQuestionId:)]) {
         NSIndexPath *indexPath = [tableView indexPathForCell:sender];
         
-        NSDictionary *activity = (NSDictionary *)[currentQuestions objectAtIndex:indexPath.row];
-        NSDictionary *questionDetail = (NSDictionary *)[activity objectForKey:@"question"];
-        [destination setValue:questionDetail forKey:@"sampleDetail"];
+        NSDictionary *question = (NSDictionary *)[currentQuestions objectAtIndex:indexPath.row];
+        NSString *questionId = [question objectForKey:@"id"];
+        [destination setValue:questionId forKey:@"questionId"];
     }
 }
 

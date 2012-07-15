@@ -19,5 +19,4 @@
 @property (nonatomic, copy) NSArray *allItems;
 @property (nonatomic, copy) NSArray *searchResults;
 
-- (void)searchContentForSearchText:(NSString *)searchText scope:(NSInteger)scope;
 @end

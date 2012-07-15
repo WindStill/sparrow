@@ -22,4 +22,10 @@
     return url;
 }
 
++ (UIColor *)cellImageBorderColor
+{
+    UIColor *imageBorderColor = [UIColor colorWithRed:224/255.0f green:224/255.0f blue:224/255.0f alpha:1.0];
+    return imageBorderColor;
+}
+
 @end
