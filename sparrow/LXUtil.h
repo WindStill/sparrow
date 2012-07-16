@@ -11,4 +11,5 @@
 @interface LXUtil : NSObject
 + (NSString *)contatImageURL:(NSString *)url;
 + (UIColor *)cellImageBorderColor;
++ (UIImage *)invertContrast:(UIImage *)image;
 @end

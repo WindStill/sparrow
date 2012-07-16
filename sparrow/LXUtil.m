@@ -28,4 +28,32 @@
     return imageBorderColor;
 }
 
++ (UIImage *)invertContrast:(UIImage *)image
+{
+    CGImageRef inImage = image.CGImage;
+    CFDataRef m_DataRef = CGDataProviderCopyData(CGImageGetDataProvider(inImage));
+    NSInteger width = CGImageGetWidth(inImage);
+    NSInteger height = CGImageGetHeight(inImage);
+    NSInteger bpc = CGImageGetBitsPerComponent(inImage);
+    NSInteger bpp = CGImageGetBitsPerPixel(inImage);
+    NSInteger bpl = CGImageGetBytesPerRow(inImage);
+    UInt8 *m_PixelBuf = (UInt8 *)CFDataGetBytePtr(m_DataRef);
+    NSInteger length = CFDataGetLength(m_DataRef);
+    NSLog(@"len %d", length);  
+    NSLog(@"width=%d, height=%d", width, height);          
+    NSLog(@"1=%d, 2=%d, 3=%d", bpc, bpp,  bpl);
+    for (int index=0; index<length; index += 4) {
+        
+        m_PixelBuf[index + 0] = 255 - m_PixelBuf[index + 0];
+        m_PixelBuf[index + 1] = 255 - m_PixelBuf[index + 1];
+        m_PixelBuf[index + 2] = 255 - m_PixelBuf[index + 2];
+        NSLog(@"r=%d, g=%d, b=%d, alpha=%d", m_PixelBuf[index + 0], m_PixelBuf[index + 1],  m_PixelBuf[index + 2], m_PixelBuf[index + 3]);
+    }
+    CGContextRef ctx = CGBitmapContextCreate(m_PixelBuf, width, height, bpc, bpl, CGImageGetColorSpace(inImage), kCGImageAlphaPremultipliedLast);
+    CGImageRef imageRef = CGBitmapContextCreateImage(ctx);
+    UIImage *rawImage = [UIImage imageWithCGImage:imageRef];
+    CGContextRelease(ctx);
+    return rawImage;
+}
+
 @end

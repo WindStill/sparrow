@@ -122,9 +122,7 @@
     
     [self.searchDisplayController setActive:NO animated:NO];
     
-//    self.view.backgroundColor = [UIColor whiteColor];
     SearchResultTableViewController *destination = [self.storyboard instantiateViewControllerWithIdentifier:@"searchResultController"];
-//    SearchResultTableViewController *destination = [SearchResultTableViewController alloc];
     destination.navigationItem.title = scopeText;
     destination.scopeType = scopeType;
     destination.searchText = searchText;
@@ -152,18 +150,6 @@
 - (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar
 {
     self.view.backgroundColor = [UIColor whiteColor];
-}
-
--(BOOL)searchDisplayController:(UISearchDisplayController *)controller 
-shouldReloadTableForSearchString:(NSString *)searchString
-{
-    return NO;
-}
-
-- (BOOL)searchDisplayController:(UISearchDisplayController *)controller 
-shouldReloadTableForSearchScope:(NSInteger)searchOption
-{
-    return NO;
 }
 
 - (void)searchDisplayController:(UISearchDisplayController *)controller didShowSearchResultsTableView:(UITableView *)tableView

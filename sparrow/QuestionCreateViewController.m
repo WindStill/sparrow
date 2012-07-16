@@ -7,6 +7,7 @@
 //
 
 #import "QuestionCreateViewController.h"
+#import "LXUtil.h"
 
 @implementation QuestionCreateViewController
 
@@ -40,6 +41,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+//    UIImage *originImage = [UIImage imageNamed:@"titlebar_confirm"];
+//    UIImage *image = [LXUtil invertContrast:originImage];
+    UIButton *button = (UIButton *)[self.view viewWithTag:1];
+    [button setImage:[UIImage imageNamed:@"bl_@"] forState:UIControlStateNormal];
 }
 
 - (void)viewDidUnload
